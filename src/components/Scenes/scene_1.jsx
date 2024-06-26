@@ -1,52 +1,66 @@
 import React, { useState, useEffect } from 'react';
 import './default_scene.css';
-import Dialogue from '../DialogueBox/Dialogue';
+import DialogueBox from '../DialogueBox/DialogueBox';
 import { dialogues } from '../DialogueBox/dialogue';
 import { getDialoguesForScene } from '../../utils/sortByScene';
 import { useNavigate } from 'react-router-dom';
 
 const Scene1 = () => {
+
   const sceneId = 1;
-  const sceneDialogues = getDialoguesForScene(sceneId, dialogues);
-  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const sceneDialogues = getDialoguesForScene(sceneId, dialogues)
+
+  const [currentLineId, setCurrentLineId] = useState(sceneDialogues[0]?.id)
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (currentLineIndex === 13 || currentLineIndex === 14) {
-      navigate('/scene2');
+  const handleNext = () => {
+    const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
+    if (currentDialogue && currentDialogue.next) {
+      if (!currentDialogue.choices) {
+        setCurrentLineId(currentDialogue.next)
+      } else {
+        console.log('Choices available, waiting for user selection')
+      }
+    } else {
+      console.log(currentDialogue, 'Sc1/handleNext/nextlineId log')
     }
-  }, [currentLineIndex, navigate]);
-  const handleNext = (nextIndex) => {
-    const sceneDialoguesLength = sceneDialogues.length;
-  
-    console.log('currentLineIndex:', currentLineIndex, 'nextIndex:', nextIndex);
-  
-    if (nextIndex !== undefined && nextIndex < sceneDialoguesLength) {
-      setCurrentLineIndex(nextIndex - 1); // Convert `id` to array index
-    } else if (currentLineIndex === 12 && nextIndex === 14) {
-      // Directly navigate to the next scene if the choice is to find shelter
-      navigate('/scene2');
-    } else if (currentLineIndex < sceneDialoguesLength - 1) {
-      setCurrentLineIndex(prevIndex => prevIndex + 1);
-    } else if (currentLineIndex === sceneDialoguesLength - 1) {
-      navigate('/scene2');
+    if (currentDialogue.id === 13) {
+      navigate('/scene2')
     }
-  };
+
+  }
+
+  const handleSelectChoice = (nextId) => {
+    console.log(`/handleSelectChoice: Choice selected: ${nextId}`)
+    const nextDialogue = dialogues.find(d => d.id === nextId); 
+    if (nextDialogue) {
+      setCurrentLineId(nextDialogue.id); 
+      handleNext(); 
+    } else {
+      console.error('Dialogue not found for id:', nextId);
+    }
+  }
   
-  
+  const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
+  console.log(currentDialogue, 'Current Dialogue')
+
 
   return (
-    <div className="scene-container" style={{ backgroundImage: "url('/media/default_background.jpg')" }}>
-      <img src="/media/DT.png" alt="Character" id="character-image" />
-      {sceneDialogues.length > 0 && (
-        <Dialogue 
-          lines={sceneDialogues} 
-          currentLineIndex={currentLineIndex} 
-          onNext={handleNext} 
-        />
-      )}
-    </div>
-  );
-};
+      <div className="scene-container" onClick={handleNext} style={{ backgroundImage: "url('/media/default_background.jpg')" }}>
+          <img src="/media/DT.png" alt="Character" id="character-image" />
 
-export default Scene1;
+
+          {currentDialogue && (
+            <DialogueBox
+              dialogue={currentDialogue.text}
+              choices={currentDialogue.choices}
+              onSelectChoice={handleSelectChoice}
+            />
+          )}
+      </div>
+  )
+}
+
+
+
+export default Scene1
