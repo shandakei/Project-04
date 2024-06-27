@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './default_scene.css';
-import DialogueBox from '../DialogueBox/DialogueBox';
+import './cutscene_default.css';
 import { dialogues } from '../DialogueBox/dialogue';
 import { getDialoguesForScene } from '../../utils/sortByScene';
 import { useNavigate } from 'react-router-dom';
 
-const Scene1 = () => {
+const Cutscene1 = () => {
 
-  const sceneId = 1;
+  const sceneId = 'cutscene_1';
   const sceneDialogues = getDialoguesForScene(sceneId, dialogues)
 
-  const [currentLineId, setCurrentLineId] = useState(65)
+  const [currentLineId, setCurrentLineId] = useState(49)
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -22,10 +21,10 @@ const Scene1 = () => {
         console.log('Choices available, waiting for user selection')
       }
     } else {
-      console.log(currentDialogue, 'Sc1/handleNext/nextlineId log')
+      console.log(currentDialogue, 'Sc2/handleNext/nextlineId log')
     }
-    if (currentDialogue.id === 13) {
-      navigate('/scene2')
+    if (currentDialogue.id === 59) {
+      navigate('/slideshow1')
     }
 
   }
@@ -46,24 +45,14 @@ const Scene1 = () => {
 
 
   return (
-      <div className="scene-container" onClick={handleNext} style={{ backgroundImage: "url('/media/default_background.jpg')" }}>
-          <img src="/media/DT.png" alt="Character" id="character-image" />
-          <div className="otherChars">
-            <img src="/media/Ange.png" alt="Character" id="second-character-image" />
-          </div>
+      <div className="cutscene-container" onClick={handleNext} style={{ backgroundImage: "" }}>
 
-
-          {currentDialogue && (
-            <DialogueBox
-              dialogue={currentDialogue.text}
-              choices={currentDialogue.choices}
-              onSelectChoice={handleSelectChoice}
-            />
-          )}
+        <p>{currentDialogue.text}</p>
+          
       </div>
   )
 }
 
 
 
-export default Scene1
+export default Cutscene1

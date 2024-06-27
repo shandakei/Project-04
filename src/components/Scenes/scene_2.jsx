@@ -61,10 +61,10 @@ const Scene2 = () => {
         console.log('Choices available, waiting for user selection')
       }
     } else {
-      console.log(currentDialogue, 'Sc1/handleNext/nextlineId log')
+      console.log(currentDialogue, 'Sc2/handleNext/nextlineId log')
     }
-    if (currentDialogue.id === 13) {
-      navigate('/scene2')
+    if (currentDialogue.id === 43) {
+      navigate('/cutscene1')
     }
 
   }

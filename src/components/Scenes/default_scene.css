@@ -7,7 +7,7 @@ body {
   background: url('public/media/default_background.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
-  color: black !important; /* Set default text color to black */
+  color: black !important; 
 }
 
 .scene-container {
@@ -23,8 +23,9 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  color: black !important; /* Ensure all text elements are black */
-  text-shadow: 2px 2px 4px black; /* Add black shadow to all text */
+  color: black !important;
+  text-shadow: 2px 2px 4px black; 
+  
 }
 
 button {
@@ -93,6 +94,7 @@ p {
   margin: 0;
   white-space: pre-wrap;
   flex: 1; 
+  font-size: 3rem;
 }
 
 .dialogue-box button {
@@ -233,7 +235,7 @@ p {
   }
 
   .dialogue-box p {
-    font-size: 16px;
+    font-size: 2rem;
   }
 
   .dialogue-box button {
@@ -255,7 +257,7 @@ p {
   }
 
   .dialogue-box p {
-    font-size: 14px;
+    font-size: 2rem;
   }
 
   .dialogue-box button {
@@ -277,7 +279,7 @@ p {
   }
 
   .dialogue-box p {
-    font-size: 12px;
+    font-size: 2rem;
   }
 
   .dialogue-box button {
@@ -299,7 +301,7 @@ p {
   }
 
   .dialogue-box p {
-    font-size: 10px;
+    font-size: 1.5rem;
   }
 
   .dialogue-box button {

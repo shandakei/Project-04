@@ -30,7 +30,7 @@ zzz..
 ...
 rrr..
 ...
-.!..
+. ! ..
 rrr...rR! *thud*
 ...
 ...
@@ -53,11 +53,160 @@ shit!
 *you grab your bag and run for the street*
 Haaa huh haa! huh haa!
 ...raaahh!...
+*the souds recede into the distance*
 ...
 haahhh dammit...
 :: fight
-Gah!!
+Gah !!
 //zombie color scheme red
-NO!!
+NO !!
 XXX
 ___
+
+CUTSCENE 1-INTRO
+
+...
+This world...
+Is broken...
+How many years have passed since the fall of civilization
+Where once there was light and sound
+Exists only the dark and quiet
+And fear..
+The hubris of humanity has always defined its' destiny
+Everyone knew it would one day bring about desctruction
+...
+And it did
+
+//insert flashbacks scene
+
+We found out that day
+That we were never meant to touch the realm of God
+Our hands scorched the skies black
+Sacrificing our world to the darkness
+That had slept so peacefully for so long..
+
+
+SCENE 3
+
+...
+...
+will I ever be able to sleep again?
+I cant even remember what it feels like
+
+: keep walking
+: have a rest
+* you sit down on some nearby rubble and take in your surroundings*
+Everything seems quiet
+...
+: check your bag
+*inside the bag are a few cans of rations, a blanket, a rope and an old solar powered phone*
+...thought I had more food left..
+
+I better keep going
+I must be getting closer by now...right?
+...
+Why did I ever decide to leave..
+I never even liked business trips..
+...
+...
+fucking Sydney..
+
+: keep walking
+: look for supplies
+*you see an abandoned car nearby*
+:: approach the car
+*you approach the car*
+seems alright..
+*inside the car are various broken objects*
+*You find nothing of value*
+Damn..
+:: Go around the car
+
+*you continue down the street*
+...
+...
+! ! ...
+What was that?
+
+:hide
+*you take cover behind some nearby rubble*
+:look around
+*nothing in sight*
+
+..elp!..
+...
+*you strain your ears and listen intently*
+..
+..heeEELLP!
+I can hear something!
+..someone calling for help? Someone alive..?
+
+:approach
+*you start to run towards an intersection*
+ROOOOAAAAR
+:hide
+*you keep listening from behind cover*
+ROOOAAAARRR
+I can't just stay here! If they're alive, they might be able to help me find Xia'Er!
+*you stop hiding and approach the sounds*
+
+Please be in time!
+ROOOOAAARRRRR!!
+help me! 
+
+*A young woman comes hurtling into view being closely pursued by a towering figure*
+
+: call out to her
+*the girl fails to hear you over the noise of crashing behind her*
+: keep going
+
+
+: distract the figure
+*you pick up a rock mid-run and hurl it at the figure pursuing the girl*
+Take this!
+*the rock hits the figure in the head*
+RRRRhhh?!
+*it turns to you and the girl manages to get some distance*
+*You catch up to her in a few paces*
+RUN!
+: grab her
+*You reach out your hand to her, running as hard as you can*
+*You manage to grab her wrist*
+ROOOAAAARRR!!
+*the figure swings out at you*
+*you pull her down and duck as the massive arm swoops over your head*
+RUN!
+
+*You both hurtle towards the nearest building*
+
+:enter building
+*You scramble through a broken doorway into an abandoned 7/11*
+*the aisles are covered in dust and filth, as are the shelves*
+RRRRAAAAAAA!
+*you can hear it approaching*
+CRAAASHH!
+Come on! He's too big to get through the door!
+It won't stop him though!
+*her voice sounds familiar...*
+*you look stop and look over your shoulder*
+*The figure once shrouded in darkness is now illuminated by light reflected off shattered glass*
+*what could have once been a man was now a grey lumpen mass of torn skin and flesh*
+*it's scalp is covered in pustules and it's mouth a bloody mess*
+Look at it's eyes...
+*The girl was right, its' eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*
+Come on! 
+*You grab the girl and keep running into the depths of the building*
+:run down the street
+*you change course just before entering and swerve to the right, dragging her behind you down the sidewalk*
+Why aren't we hiding in there!?
+*her voice sounds familiar...*
+*The figure fails to stop it's pursuit in time and crashes into the frame of the building entrance*
+*glass shatters everywhere and the figure shakes off the debris*
+*you look stop and look over your shoulder*
+*The figure once shrouded in darkness is now illuminated by light reflected off shattered glass*
+*what could have once been a man was now a grey lumpen mass of torn skin and flesh*
+*it's scalp is covered in pustules and it's mouth a bloody mess*
+Look at it's eyes...
+*The girl was right, its' eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*
+Come on! 
+*You grab the girl and keep running down the street*
