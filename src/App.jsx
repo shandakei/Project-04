@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Scene1 from './components/Scenes/scene_1';
 import Scene2 from './components/Scenes/scene_2';
-import Cutscene1 from './components/cutscenes/cutscene.jsx';
+import Cutscene1_1 from './components/cutscenes/cutscene1_1.jsx';
 import Slideshow1 from './components/Slideshows/slideshow1.jsx';
+import Cutscene1_2 from './components/cutscenes/cutscene1_2.jsx';
 import Scene3 from './components/Scenes/scene_3';
 
 export default function App() {
@@ -20,24 +21,15 @@ export default function App() {
     localStorage.removeItem('currentScene');
     localStorage.removeItem('choices');
   };
-  const cutscene1 = [
-    '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/1_breakfast.png',
-    '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/2_leaving.png',
-    '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/3_boarding.png',
-    '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/4_plane_window.png',
-    '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/5_anchor.png',
-    '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/6_crowd.png',
-    '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/7_chasing_people.png'
-    ]
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Scene1 />} />
         <Route path="/scene2" element={<Scene2 />} />
-        <Route path="/cutscene1" element={<Cutscene1 />} />
+        <Route path="/cutscene1_1" element={<Cutscene1_1 />} />
         <Route path="/slideshow1" element={<Slideshow1 />} />
-        {/* <Route path="/cutscene1_2" element={<Cutscene1-2 />} /> */}
+        <Route path="/cutscene1_2" element={<Cutscene1_2 />} />
         <Route path="/scene3" element={<Scene3  />} />
       </Routes>
 

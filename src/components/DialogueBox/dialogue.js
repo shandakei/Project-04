@@ -1,4 +1,4 @@
-import cycleCutsceneOne from "../cutscenes/cutscene.jsx";
+import cycleCutsceneOne from "../cutscenes/cutscene1_1.jsx";
 
 export const dialogues = [
     { id: 1, scene: 1, text: "... ", next: 2 },
@@ -23,6 +23,8 @@ export const dialogues = [
     },
     { id: 13, scene: 1, text: "I should push a little longer..he's waiting for me..", action: 'fadeOut', next: 15 },
     { id: 14, scene: 1, text: "I have no choice.. wait for me..", action: 'fadeOut', next: 15 }, // -> /scene2
+
+
     { id: 15, scene: 2, text: "zzz..", next: 16 },
     { id: 16, scene: 2, text: "...", next: 17 },
     { id: 17, scene: 2, text: "zzz..", next: 18 },
@@ -50,7 +52,7 @@ export const dialogues = [
     { id: 30, scene: 2, text: "...", next: 31 },
     { id: 31, scene: 2, text: "...", next: 32 },
     { id: 32, scene: 2, text: "...", next: 33 },
-    { id: 33, scene: 2, text: "...", next: 43 }, // Loop back to remain silent choice
+    { id: 33, scene: 2, text: "...", next: 43 }, 
     { id: 34, scene: 2, text: "You turn on the light and nothing happens.", next: 26 }, // Loop back to initial choice
     { id: 35, scene: 2, text: "Rrah..?", next: 36 },
     { id: 36, scene: 2, text: "RRRAAAAAAHHHHHHHHH!!!", next: 37 },
@@ -83,50 +85,85 @@ export const dialogues = [
     { id: 57, scene: 'cutscene_1', text: "Everyone knew it would one day bring about destruction", next: 58 },
     { id: 58, scene: 'cutscene_1', text: "...", next: 59 },
     { id: 59, scene: 'cutscene_1', text: "And it did", next: 60 },
-    //Slideshow1
+
+    //Slideshow1 -------------------------------------------------
+
     { id: 60, scene: 'cutscene_1_2', text: "We found out that day", next: 61 },
     { id: 61, scene: 'cutscene_1_2', text: "That we were never meant to touch the realm of God", next: 62 },
     { id: 62, scene: 'cutscene_1_2', text: "Our hands scorched the skies black", next: 63 },
-    { id: 63, scene: 'cutscene_1_2', text: "Sacrificing our world to the darkness", next: 64 },
+    { id: 63, scene: 'cutscene_1_2', text: "Sacrificing this world to the darkness", next: 64 },
     { id: 64, scene: 'cutscene_1_2', text: "That had slept so peacefully for so long..", next: 65 },
+
 
     { id: 65, scene: 3, text: "...", next: 66 },
     { id: 66, scene: 3, text: "...", next: 67 },
-    { id: 67, scene: 3, text: "will I ever be able to sleep again?", next: 68 },
-    { id: 68, scene: 3, text: "I cant even remember what it feels like", next: 69 },
-    { id: 69, scene: 3, text: "keep walking", choices: [{ id: 1, scene: 3, text: "keep walking", next: 70 }, { id: 2, scene: 3, text: "have a rest", next: 71 }] },
-    { id: 70, scene: 3, text: "have a rest", next: 71 },
-    { id: 71, scene: 3, text: "* you sit down on some nearby rubble and take in your surroundings*", next: 72 },
+    { id: 67, scene: 3, text: "Will I ever be able to sleep again?", next: 68 },
+    { id: 68, scene: 3, text: "I can't even remember what it feels like", next: 69 },
+    {
+        id: 69, 
+        scene: 3, 
+        text: "What should I do next?",
+        choices: [
+            { id: 1, scene: 3, text: "Keep walking", next: 70 },
+            { id: 2, scene: 3, text: "Have a rest", next: 71 },
+            { id: 3, scene: 3, text: "Check your bag", next: 74 }
+        ]
+    },
+    { id: 70, scene: 3, text: "*you keep walking*", next: 78 }, 
+    { id: 71, scene: 3, text: "*you sit down on some nearby rubble and take in your surroundings*", next: 72 },
     { id: 72, scene: 3, text: "Everything seems quiet", next: 73 },
-    { id: 73, scene: 3, text: "...", next: 74 },
-    { id: 74, scene: 3, text: "check your bag", next: 75 },
-    { id: 75, scene: 3, text: "*inside the bag are a few cans of rations, a blanket, a rope and an old solar powered phone*", next: 76 },
-    { id: 76, scene: 3, text: "...thought I had more food left..", next: 77 },
-    { id: 77, scene: 3, text: "I better keep going", next: 78 },
+    { id: 73, scene: 3, text: "...", next: 76 },
+    { id: 74, scene: 3, text: "*inside the bag are a few cans of rations, a blanket, a rope and an old solar powered phone*", next: 75 },
+    { id: 75, scene: 3, text: "...thought I had more food left..", next: 76 },
+    { id: 76, scene: 3, text: "I better keep going", next: 78 },
     { id: 78, scene: 3, text: "I must be getting closer by now...right?", next: 79 },
     { id: 79, scene: 3, text: "Why did I ever decide to leave..", next: 80 },
     { id: 80, scene: 3, text: "I never even liked business trips..", next: 81 },
     { id: 81, scene: 3, text: "...", next: 82 },
     { id: 82, scene: 3, text: "...", next: 83 },
-    { id: 83, scene: 3, text: "fucking Sydney..", next: 84 },
-    { id: 84, scene: 3, text: "keep walking", choices: [{ id: 3, scene: 3, text: "keep walking", next: 85 }, { id: 4, scene: 3, text: "look for supplies", next: 86 }] },
-    { id: 85, scene: 3, text: "look for supplies", next: 86 },
+    { id: 83, scene: 3, text: "Fucking Sydney..", next: 84 },
+    {
+        id: 84, 
+        scene: 3, 
+        text: "What now?",
+        choices: [
+            { id: 4, scene: 3, text: "Keep walking", next: 85 },
+            { id: 5, scene: 3, text: "Look for supplies", next: 86 }
+        ]
+    },
+    { id: 85, scene: 3, text: "*you keep walking*", next: 95 }, // Link back to later part of dialogue
     { id: 86, scene: 3, text: "*you see an abandoned car nearby*", next: 87 },
-    { id: 87, scene: 3, text: "approach the car", choices: [{ id: 5, scene: 3, text: "approach the car", next: 88 }] },
+    {
+        id: 87, 
+        scene: 3, 
+        text: "What should I do?",
+        choices: [
+            { id: 6, scene: 3, text: "Approach the car", next: 88 },
+            { id: 7, scene: 3, text: "Go around the car", next: 94 }
+        ]
+    },
     { id: 88, scene: 3, text: "*you approach the car*", next: 89 },
-    { id: 89, scene: 3, text: "seems alright..", next: 90 },
+    { id: 89, scene: 3, text: "Seems alright..", next: 90 },
     { id: 90, scene: 3, text: "*inside the car are various broken objects*", next: 91 },
     { id: 91, scene: 3, text: "*You find nothing of value*", next: 92 },
     { id: 92, scene: 3, text: "Damn..", next: 93 },
-    { id: 93, scene: 3, text: "Go around the car", choices: [{ id: 6, scene: 3, text: "Go around the car", next: 94 }] },
+    { id: 93, scene: 3, text: "Go around the car", next: 94 },
     { id: 94, scene: 3, text: "*you continue down the street*", next: 95 },
     { id: 95, scene: 3, text: "...", next: 96 },
     { id: 96, scene: 3, text: "...", next: 97 },
     { id: 97, scene: 3, text: "! ! ...", next: 98 },
     { id: 98, scene: 3, text: "What was that?", next: 99 },
-    { id: 99, scene: 3, text: "hide", choices: [{ id: 7, scene: 3, text: "hide", next: 100 }, { id: 8, scene: 3, text: "look around", next: 103 }] },
+    {
+        id: 99, 
+        scene: 3, 
+        text: "What should I do?",
+        choices: [
+            { id: 8, scene: 3, text: "Hide", next: 100 },
+            { id: 9, scene: 3, text: "Look around", next: 103 }
+        ]
+    },
     { id: 100, scene: 3, text: "*you take cover behind some nearby rubble*", next: 101 },
-    { id: 101, scene: 3, text: "look around", next: 102 },
+    { id: 101, scene: 3, text: "...", next: 102 },
     { id: 102, scene: 3, text: "*nothing in sight*", next: 103 },
     { id: 103, scene: 3, text: "..elp!..", next: 104 },
     { id: 104, scene: 3, text: "...", next: 105 },
@@ -135,29 +172,45 @@ export const dialogues = [
     { id: 107, scene: 3, text: "..heeEELLP!", next: 108 },
     { id: 108, scene: 3, text: "I can hear something!", next: 109 },
     { id: 109, scene: 3, text: "..someone calling for help? Someone alive..?", next: 110 },
-    { id: 110, scene: 3, text: "approach", choices: [{ id: 9, scene: 3, text: "approach", next: 111 }] },
     { id: 111, scene: 3, text: "*you start to run towards an intersection*", next: 112 },
     { id: 112, scene: 3, text: "ROOOOAAAAR", next: 113 },
-    { id: 113, scene: 3, text: "hide", choices: [{ id: 10, scene: 3, text: "hide", next: 114 }] },
+    {
+        id: 113, 
+        scene: 3, 
+        text: "What should I do?",
+        choices: [
+            { id: 10, scene: 3, text: "Hide", next: 114 },
+            { id: 11, scene: 3, text: "Approach", next: 118 } // Updated to link to the correct next step
+        ]
+    },
     { id: 114, scene: 3, text: "*you keep listening from behind cover*", next: 115 },
     { id: 115, scene: 3, text: "ROOOAAAARRR", next: 116 },
-    { id: 116, scene: 3, text: "I can't just stay here! If they're alive, they might be able to help me find Xia'Er!", next: 117 },
+    { id: 116, scene: 3, text: "I can't just stay here! If they're alive, they might be able to help me find Xiao'Er!", next: 117 },
     { id: 117, scene: 3, text: "*you stop hiding and approach the sounds*", next: 118 },
     { id: 118, scene: 3, text: "Please be in time!", next: 119 },
     { id: 119, scene: 3, text: "ROOOOAAARRRRR!!", next: 120 },
-    { id: 120, scene: 3, text: "help me!", next: 121 },
+    { id: 120, scene: 3, text: "Help me!", next: 121 },
     { id: 121, scene: 3, text: "*A young woman comes hurtling into view being closely pursued by a towering figure*", next: 122 },
-    { id: 122, scene: 3, text: "call out to her", choices: [{ id: 11, scene: 3, text: "call out to her", next: 123 }, { id: 12, scene: 3, text: "keep going", next: 124 }] },
-    { id: 123, scene: 3, text: "*the girl fails to hear you over the noise of crashing behind her*", next: 124 },
-    { id: 124, scene: 3, text: "distract the figure", choices: [{ id: 13, scene: 3, text: "distract the figure", next: 125 }] },
-    { id: 125, scene: 3, text: "*you pick up a rock mid-run and hurl it at the figure pursuing the girl*", next: 126 },
-    { id: 126, scene: 3, text: "Take this!", next: 127 },
+    {
+        id: 122, 
+        scene: 3, 
+        text: "What should I do?",
+        choices: [
+            { id: 11, scene: 3, text: "Call out to her", next: 123 },//
+            { id: 12, scene: 3, text: "Keep going", next: 124 },
+            { id: 13, scene: 3, text: "Distract the figure", next: 125 }
+        ]
+    },
+    { id: 123, scene: 3, text: "*the girl fails to hear you over the noise of crashing behind her*", next: 126 },//
+    { id: 124, scene: 3, text: "*you keep going*", next: 127 },
+    { id: 125, scene: 3, text: "*you pick up a rock mid-run and hurl it at the figure pursuing the girl*", next: 128 },//
+    { id: 126, scene: 3, text: "What should I do?", choices: [{ id: 13, scene: 3, text: "Distract the figure", next: 125 }] },
     { id: 127, scene: 3, text: "*the rock hits the figure in the head*", next: 128 },
-    { id: 128, scene: 3, text: "RRRRhhh?!", next: 129 },
+    { id: 128, scene: 3, text: "RRRRhhh?!", next: 129 },//
     { id: 129, scene: 3, text: "*it turns to you and the girl manages to get some distance*", next: 130 },
     { id: 130, scene: 3, text: "*You catch up to her in a few paces*", next: 131 },
     { id: 131, scene: 3, text: "RUN!", next: 132 },
-    { id: 132, scene: 3, text: "grab her", choices: [{ id: 14, scene: 3, text: "grab her", next: 133 }] },
+    { id: 132, scene: 3, text: "Grab her", next: 133 },
     { id: 133, scene: 3, text: "*You reach out your hand to her, running as hard as you can*", next: 134 },
     { id: 134, scene: 3, text: "*You manage to grab her wrist*", next: 135 },
     { id: 135, scene: 3, text: "ROOOAAAARRR!!", next: 136 },
@@ -165,7 +218,16 @@ export const dialogues = [
     { id: 137, scene: 3, text: "*you pull her down and duck as the massive arm swoops over your head*", next: 138 },
     { id: 138, scene: 3, text: "RUN!", next: 139 },
     { id: 139, scene: 3, text: "*You both hurtle towards the nearest building*", next: 140 },
-    { id: 140, scene: 3, text: "enter building", choices: [{ id: 15, scene: 3, text: "enter building", next: 141 }] },
+
+    { //////////////////////////////////////////--------------------------check next from here-------------------------------------
+        id: 140, 
+        scene: 3, 
+        text: "What should I do?",
+        choices: [
+            { id: 14, scene: 3, text: "Enter building", next: 141 },
+            { id: 15, scene: 3, text: "Run down the street", next: 158 }
+        ]
+    },//choice 14 -> SCENE4
     { id: 141, scene: 3, text: "*You scramble through a broken doorway into an abandoned 7/11*", next: 142 },
     { id: 142, scene: 3, text: "*the aisles are covered in dust and filth, as are the shelves*", next: 143 },
     { id: 143, scene: 3, text: "RRRRAAAAAAA!", next: 144 },
@@ -174,27 +236,26 @@ export const dialogues = [
     { id: 146, scene: 3, text: "Come on! He's too big to get through the door!", next: 147 },
     { id: 147, scene: 3, text: "It won't stop him though!", next: 148 },
     { id: 148, scene: 3, text: "*her voice sounds familiar...*", next: 149 },
-    { id: 149, scene: 3, text: "*you look stop and look over your shoulder*", next: 150 },
+    { id: 149, scene: 3, text: "*you stop and look over your shoulder*", next: 150 },
     { id: 150, scene: 3, text: "*The figure once shrouded in darkness is now illuminated by light reflected off shattered glass*", next: 151 },
     { id: 151, scene: 3, text: "*what could have once been a man was now a grey lumpen mass of torn skin and flesh*", next: 152 },
-    { id: 152, scene: 3, text: "*it's scalp is covered in pustules and it's mouth a bloody mess*", next: 153 },
-    { id: 153, scene: 3, text: "Look at it's eyes...", next: 154 },
-    { id: 154, scene: 3, text: "*The girl was right, its' eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*", next: 155 },
+    { id: 152, scene: 3, text: "*its scalp is covered in pustules and its mouth a bloody mess*", next: 153 },
+    { id: 153, scene: 3, text: "Look at its eyes...", next: 154 },
+    { id: 154, scene: 3, text: "*The girl was right, its eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*", next: 155 },
     { id: 155, scene: 3, text: "Come on!", next: 156 },
-    { id: 156, scene: 3, text: "*You grab the girl and keep running into the depths of the building*", next: 157 },
-    { id: 157, scene: 3, text: "run down the street", choices: [{ id: 16, scene: 3, text: "run down the street", next: 158 }] },
+    { id: 156, scene: 3, text: "*You grab the girl and keep running into the depths of the building*", next: 171 }, //-> scene 4
+    //choice15 ->SCENE5
     { id: 158, scene: 3, text: "*you change course just before entering and swerve to the right, dragging her behind you down the sidewalk*", next: 159 },
     { id: 159, scene: 3, text: "Why aren't we hiding in there!?", next: 160 },
     { id: 160, scene: 3, text: "*her voice sounds familiar...*", next: 161 },
-    { id: 161, scene: 3, text: "*The figure fails to stop it's pursuit in time and crashes into the frame of the building entrance*", next: 162 },
+    { id: 161, scene: 3, text: "*The figure fails to stop its pursuit in time and crashes into the frame of the building entrance*", next: 162 },
     { id: 162, scene: 3, text: "*glass shatters everywhere and the figure shakes off the debris*", next: 163 },
-    { id: 163, scene: 3, text: "*you look stop and look over your shoulder*", next: 164 },
+    { id: 163, scene: 3, text: "*you stop and look over your shoulder*", next: 164 },
     { id: 164, scene: 3, text: "*The figure once shrouded in darkness is now illuminated by light reflected off shattered glass*", next: 165 },
     { id: 165, scene: 3, text: "*what could have once been a man was now a grey lumpen mass of torn skin and flesh*", next: 166 },
-    { id: 166, scene: 3, text: "*it's scalp is covered in pustules and it's mouth a bloody mess*", next: 167 },
-    { id: 167, scene: 3, text: "Look at it's eyes...", next: 168 },
-    { id: 168, scene: 3, text: "*The girl was right, its' eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*", next: 169 },
+    { id: 166, scene: 3, text: "*its scalp is covered in pustules and its mouth a bloody mess*", next: 167 },
+    { id: 167, scene: 3, text: "Look at its eyes...", next: 168 },
+    { id: 168, scene: 3, text: "*The girl was right, its eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*", next: 169 },
     { id: 169, scene: 3, text: "Come on!", next: 170 },
-    { id: 170, scene: 3, text: "*You grab the girl and keep running down the street*", next: 171 }
-];
-
+    { id: 170, scene: 3, text: "*You grab the girl and keep running down the street*", next: 169 }//-> scene 5
+    ];
