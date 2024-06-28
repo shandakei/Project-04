@@ -121,7 +121,7 @@ export const dialogues = [
     { id: 80, scene: 3, text: "I never even liked business trips..", next: 81 },
     { id: 81, scene: 3, text: "...", next: 82 },
     { id: 82, scene: 3, text: "...", next: 83 },
-    { id: 83, scene: 3, text: "Fucking Sydney..", next: 84 },
+    { id: 83, scene: 3, text: "..fucking Sydney..", next: 84 },
     {
         id: 84, 
         scene: 3, 
@@ -146,8 +146,7 @@ export const dialogues = [
     { id: 89, scene: 3, text: "Seems alright..", next: 90 },
     { id: 90, scene: 3, text: "*inside the car are various broken objects*", next: 91 },
     { id: 91, scene: 3, text: "*You find nothing of value*", next: 92 },
-    { id: 92, scene: 3, text: "Damn..", next: 93 },
-    { id: 93, scene: 3, text: "Go around the car", next: 94 },
+    { id: 92, scene: 3, text: "Damn..", next: 94 },
     { id: 94, scene: 3, text: "*you continue down the street*", next: 95 },
     { id: 95, scene: 3, text: "...", next: 96 },
     { id: 96, scene: 3, text: "...", next: 97 },
@@ -171,7 +170,7 @@ export const dialogues = [
     { id: 106, scene: 3, text: "..", next: 107 },
     { id: 107, scene: 3, text: "..heeEELLP!", next: 108 },
     { id: 108, scene: 3, text: "I can hear something!", next: 109 },
-    { id: 109, scene: 3, text: "..someone calling for help? Someone alive..?", next: 110 },
+    { id: 109, scene: 3, text: "..someone calling for help? Someone alive..?", next: 111 },
     { id: 111, scene: 3, text: "*you start to run towards an intersection*", next: 112 },
     { id: 112, scene: 3, text: "ROOOOAAAAR", next: 113 },
     {
@@ -209,8 +208,8 @@ export const dialogues = [
     { id: 128, scene: 3, text: "RRRRhhh?!", next: 129 },//
     { id: 129, scene: 3, text: "*it turns to you and the girl manages to get some distance*", next: 130 },
     { id: 130, scene: 3, text: "*You catch up to her in a few paces*", next: 131 },
-    { id: 131, scene: 3, text: "RUN!", next: 132 },
-    { id: 132, scene: 3, text: "Grab her", next: 133 },
+    { id: 131, scene: 3, text: "RUN!", next: 133 },
+
     { id: 133, scene: 3, text: "*You reach out your hand to her, running as hard as you can*", next: 134 },
     { id: 134, scene: 3, text: "*You manage to grab her wrist*", next: 135 },
     { id: 135, scene: 3, text: "ROOOAAAARRR!!", next: 136 },
@@ -227,34 +226,34 @@ export const dialogues = [
             { id: 14, scene: 3, text: "Enter building", next: 141 },
             { id: 15, scene: 3, text: "Run down the street", next: 158 }
         ]
-    },//choice 14 -> SCENE4
-    { id: 141, scene: 3, text: "*You scramble through a broken doorway into an abandoned 7/11*", next: 142 },
+    },//choice 14 --> SCENE4
+    { id: 141, scene: 3, text: "*You scramble through the doorway of an abandoned store*", next: 142 },
     { id: 142, scene: 3, text: "*the aisles are covered in dust and filth, as are the shelves*", next: 143 },
     { id: 143, scene: 3, text: "RRRRAAAAAAA!", next: 144 },
     { id: 144, scene: 3, text: "*you can hear it approaching*", next: 145 },
     { id: 145, scene: 3, text: "CRAAASHH!", next: 146 },
     { id: 146, scene: 3, text: "Come on! He's too big to get through the door!", next: 147 },
-    { id: 147, scene: 3, text: "It won't stop him though!", next: 148 },
+    { id: 147, scene: 3, text: "It won't stop him though!", next: 148 }, //class='Ange'
     { id: 148, scene: 3, text: "*her voice sounds familiar...*", next: 149 },
     { id: 149, scene: 3, text: "*you stop and look over your shoulder*", next: 150 },
     { id: 150, scene: 3, text: "*The figure once shrouded in darkness is now illuminated by light reflected off shattered glass*", next: 151 },
     { id: 151, scene: 3, text: "*what could have once been a man was now a grey lumpen mass of torn skin and flesh*", next: 152 },
-    { id: 152, scene: 3, text: "*its scalp is covered in pustules and its mouth a bloody mess*", next: 153 },
-    { id: 153, scene: 3, text: "Look at its eyes...", next: 154 },
+    { id: 152, scene: 3, text: "*its' scalp is covered in pustules and its' mouth a bloody mess*", next: 153 },
+    { id: 153, scene: 3, text: "Look at its eyes...", next: 154 },//class='Ange'
     { id: 154, scene: 3, text: "*The girl was right, its eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*", next: 155 },
     { id: 155, scene: 3, text: "Come on!", next: 156 },
     { id: 156, scene: 3, text: "*You grab the girl and keep running into the depths of the building*", next: 171 }, //-> scene 4
-    //choice15 ->SCENE5
+    //choice15 --> SCENE5
     { id: 158, scene: 3, text: "*you change course just before entering and swerve to the right, dragging her behind you down the sidewalk*", next: 159 },
-    { id: 159, scene: 3, text: "Why aren't we hiding in there!?", next: 160 },
+    { id: 159, scene: 3, text: "Why aren't we hiding in there!?", next: 160 },//class='Ange'
     { id: 160, scene: 3, text: "*her voice sounds familiar...*", next: 161 },
-    { id: 161, scene: 3, text: "*The figure fails to stop its pursuit in time and crashes into the frame of the building entrance*", next: 162 },
+    { id: 161, scene: 3, text: "*The figure fails to stop its' pursuit in time and crashes into the frame of the building entrance*", next: 162 },
     { id: 162, scene: 3, text: "*glass shatters everywhere and the figure shakes off the debris*", next: 163 },
     { id: 163, scene: 3, text: "*you stop and look over your shoulder*", next: 164 },
     { id: 164, scene: 3, text: "*The figure once shrouded in darkness is now illuminated by light reflected off shattered glass*", next: 165 },
     { id: 165, scene: 3, text: "*what could have once been a man was now a grey lumpen mass of torn skin and flesh*", next: 166 },
-    { id: 166, scene: 3, text: "*its scalp is covered in pustules and its mouth a bloody mess*", next: 167 },
-    { id: 167, scene: 3, text: "Look at its eyes...", next: 168 },
+    { id: 166, scene: 3, text: "*its' scalp is covered in pustules and its' mouth a bloody mess*", next: 167 },
+    { id: 167, scene: 3, text: "Look at its eyes...", next: 168 },//class='Ange'
     { id: 168, scene: 3, text: "*The girl was right, its eyes were sunken black holes yet in the depths they gleamed with pure malice...and hunger...*", next: 169 },
     { id: 169, scene: 3, text: "Come on!", next: 170 },
     { id: 170, scene: 3, text: "*You grab the girl and keep running down the street*", next: 169 }//-> scene 5
