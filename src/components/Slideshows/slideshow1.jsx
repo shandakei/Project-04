@@ -34,7 +34,7 @@ const Slideshow1 = () => {
                 }
                 return nextSlide;
             });
-        }, 1000); //5000 when finished
+        }, 5000); //5000 when finished
 
         return () => {
             clearInterval(interval);

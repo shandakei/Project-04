@@ -1,48 +1,12 @@
-// import React, { useState } from 'react';
-// import './default_scene.css';
-// import Dialogue from '../DialogueBox/Dialogue';
-// import { dialogues } from '../DialogueBox/dialogue';
-// import { getDialoguesForScene } from '../../utils/sortByScene';
-// import { useNavigate } from 'react-router-dom';
-
-// const Scene2 = () => {
-//   const sceneId = 2;
-//   const sceneDialogues = getDialoguesForScene(sceneId, dialogues);
-//   const [currentLineIndex, setCurrentLineIndex] = useState(15);
-//   const navigate = useNavigate();
-
-//   const handleNext = (nextIndex) => {
-//     if (nextIndex !== undefined) {
-//       setCurrentLineIndex(nextIndex);
-//     } else if (currentLineIndex < sceneDialogues.length - 1) {
-//       setCurrentLineIndex(currentLineIndex + 1);
-//     } else {
-//       navigate('/scene3');  // Navigate to Scene 3
-//     }
-//   };
-
-//   return (
-//     <div className="scene-container" style={{ backgroundImage: "url('/media/default_background_night.png')" }}>
-//       <img src="/media/DT.png" alt="Character" id="character-image" />
-//       {sceneDialogues.length > 0 && (
-//         <Dialogue 
-//           lines={sceneDialogues} 
-//           currentLineIndex={currentLineIndex} 
-//           onNext={handleNext} 
-//         />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Scene2;
-
 import React, { useState, useEffect } from 'react';
 import './default_scene.css';
 import DialogueBox from '../DialogueBox/DialogueBox';
 import { dialogues } from '../DialogueBox/dialogue';
 import { getDialoguesForScene } from '../../utils/sortByScene';
 import { useNavigate } from 'react-router-dom';
+import TextAnimation from '../../utils/TextAnimation';
+import SnowEffect from '../../utils/SnowEffect';
+import defaultAudioController from '../../utils/defaultAudioController';
 
 const Scene2 = () => {
 
@@ -50,9 +14,14 @@ const Scene2 = () => {
   const sceneDialogues = getDialoguesForScene(sceneId, dialogues)
 
   const [currentLineId, setCurrentLineId] = useState(15)
+  // const [audioPlayed, setAudioPlayed] = useState(false);
+
   const navigate = useNavigate();
 
   const handleNext = () => {
+
+    defaultAudioController.play();
+    
     const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
     if (currentDialogue && currentDialogue.next) {
       if (!currentDialogue.choices) {
@@ -64,7 +33,8 @@ const Scene2 = () => {
       console.log(currentDialogue, 'Sc2/handleNext/nextlineId log')
     }
     if (currentDialogue.id === 43) {
-      navigate('/cutscene1')
+      defaultAudioController.fadeOut()
+      navigate('/cutscene1_1')
     }
 
   }
@@ -88,12 +58,23 @@ const Scene2 = () => {
       <div className="scene-container" onClick={handleNext} style={{ backgroundImage: "url('/media/default_background_night.png')" }}>
           <img src="/media/DT.png" alt="Character" id="character-image" />
 
+          {currentDialogue && currentDialogue.name === 'hidden' && (
+            <div className="other-character-div" >
+              <img src="/media/zom-1-hidden.png" alt="Character" className="other-character-image" />
+            </div>
+          )}
+          {currentDialogue && currentDialogue.name === 'zombie' && (
+            <div className="other-character-div" >
+              <img src="/media/zom-1.png" alt="Character" className="other-character-image" />
+            </div>
+          )}
 
+          <SnowEffect />
           {currentDialogue && (
             <DialogueBox
-              dialogue={currentDialogue.text}
-              choices={currentDialogue.choices}
-              onSelectChoice={handleSelectChoice}
+            dialogue={<TextAnimation text={currentDialogue.text} speed={50} />}
+            choices={currentDialogue.choices}
+            onSelectChoice={handleSelectChoice}
             />
           )}
       </div>

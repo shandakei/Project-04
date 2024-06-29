@@ -5,19 +5,20 @@
     background-color: rgb(129, 101, 72);
     color: black;
     padding: 20px;
-    /* font-family: ; */
     border-top: 2px whitesmoke;
-    min-height: 100px;
+    min-height: 120px;
 }
 
 .dialogue-box p {
-    margin: 0;
-    white-space: pre-wrap;
+    margin: 0 auto;
+    white-space: wrap;
+    max-width: 90%;
+}
+.choices{
+  display: inline;
 }
 
 .dialogue-box button {
-    margin-top: 10px;
-    padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -25,6 +26,7 @@
     cursor: pointer;
     float: right;
     margin-right: 50px;
+    font-size: 1.5rem;
   }
   
   .dialogue-box button:hover {

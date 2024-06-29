@@ -7,13 +7,6 @@ body {
   background: url('public/media/default_background.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
-  color: black !important; 
-}
-
-.scene-container {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
 }
 
 body p,
@@ -23,7 +16,6 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  color: black !important;
   text-shadow: 2px 2px 4px black; 
   
 }
@@ -32,7 +24,7 @@ button {
   display: block;
   margin: 10px 0;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #2e3a46;
   color: white;
   border: none;
   border-radius: 5px;
@@ -40,7 +32,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #b30000;
 }
 
 p {
@@ -95,6 +87,7 @@ p {
   white-space: pre-wrap;
   flex: 1; 
   font-size: 3rem;
+  justify-content: space-around;
 }
 
 .dialogue-box button {
@@ -114,80 +107,28 @@ p {
 
 #character-image {
   position: absolute;
-  bottom: 100px; 
+  bottom: 150px; 
   left: 50px; 
+  width: 25%; 
+  height: 450px; 
+  object-fit: contain;
+  z-index: 0;
+}
+
+.other-character-image {
+  position: absolute;
+  bottom: 120px; 
+  right: 50px;
   width: 25%; 
   height: 450px; 
   object-fit: contain;
 }
 
-/* SNOWFLAKES (remove later)*/
+
 .choices {
   display: flex;
   flex-direction: column;
 }
-
-/* Snowflakes */
-.snowflake {
-  position: absolute;
-  top: -10px;
-  color: white;
-  font-size: 1.5em;
-  user-select: none;
-  pointer-events: none;
-  animation: fall linear infinite;
-}
-@keyframes fall {
-  to {
-      transform: translateY(100vh);
-  }
-}
-.snowflake:nth-child(1) {
-  left: 10%;
-  animation-duration: 10s;
-  animation-delay: 0s;
-}
-.snowflake:nth-child(2) {
-  left: 20%;
-  animation-duration: 12s;
-  animation-delay: 2s;
-}
-.snowflake:nth-child(3) {
-  left: 30%;
-  animation-duration: 14s;
-  animation-delay: 4s;
-}
-.snowflake:nth-child(4) {
-  left: 40%;
-  animation-duration: 16s;
-  animation-delay: 6s;
-}
-.snowflake:nth-child(5) {
-  left: 50%;
-  animation-duration: 18s;
-  animation-delay: 8s;
-}
-.snowflake:nth-child(6) {
-  left: 60%;
-  animation-duration: 20s;
-  animation-delay: 10s;
-}
-.snowflake:nth-child(7) {
-  left: 70%;
-  animation-duration: 22s;
-  animation-delay: 12s;
-}
-.snowflake:nth-child(8) {
-  left: 80%;
-  animation-duration: 24s;
-  animation-delay: 14s;
-}
-.snowflake:nth-child(9) {
-  left: 90%;
-  animation-duration: 26s;
-  animation-delay: 16s;
-}
-
 
 .scene2img {
   background-image: url('/media/default_background_night.png');
@@ -200,6 +141,8 @@ p {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -229,6 +172,12 @@ p {
     bottom: 120px;
   }
 
+  #other-character-image {
+    width: 30%; 
+    height: 400px;
+    bottom: 120px;
+  }
+
   .dialogue-box {
     height: 90px;
     padding: 15px;
@@ -246,6 +195,12 @@ p {
 
 @media (max-width: 992px) {
   #character-image {
+    width: 35%; 
+    height: 350px;
+    bottom: 100px;
+  }
+
+  #other-character-image {
     width: 35%; 
     height: 350px;
     bottom: 100px;
@@ -273,6 +228,12 @@ p {
     bottom: 80px;
   }
 
+  #other-character-image {
+    width: 40%; 
+    height: 300px;
+    bottom: 80px;
+  }
+
   .dialogue-box {
     height: 70px;
     padding: 8px;
@@ -295,13 +256,19 @@ p {
     bottom: 60px;
   }
 
+  #other-character-image {
+    width: 45%; 
+    height: 250px;
+    bottom: 60px;
+  }
+
   .dialogue-box {
     height: 60px;
     padding: 5px;
   }
 
   .dialogue-box p {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
 
   .dialogue-box button {

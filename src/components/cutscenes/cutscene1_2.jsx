@@ -4,6 +4,8 @@ import { dialogues } from '../DialogueBox/dialogue';
 import { getDialoguesForScene } from '../../utils/sortByScene';
 import { useNavigate } from 'react-router-dom';
 import ss1AudioController from '../../utils/ss1AudioController';
+import TextAnimation from '../../utils/TextAnimation';
+
 
 const Cutscene1_2 = () => {
 
@@ -35,9 +37,11 @@ const Cutscene1_2 = () => {
 
 
   return (
-      <div className="cutscene-container" onClick={handleNext} style={{ backgroundImage: "" }}>
+      <div className="cutscene-container cc12" onClick={handleNext}  backgroundImage={"url('/media/darkness_background.png')"} >
 
-        <p>{currentDialogue.text}</p>
+      {currentDialogue && (
+              <TextAnimation text={currentDialogue.text} speed={60} />
+            )}
           
       </div>
   )

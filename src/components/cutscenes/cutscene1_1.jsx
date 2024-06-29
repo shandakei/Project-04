@@ -3,6 +3,8 @@ import './cutscene_default.css';
 import { dialogues } from '../DialogueBox/dialogue';
 import { getDialoguesForScene } from '../../utils/sortByScene';
 import { useNavigate } from 'react-router-dom';
+import TextAnimation from '../../utils/TextAnimation';
+import LinkEffect from '../../utils/LinkEffect';
 
 const Cutscene1_1 = () => {
 
@@ -29,25 +31,33 @@ const Cutscene1_1 = () => {
 
   }
 
-  const handleSelectChoice = (nextId) => {
-    console.log(`/handleSelectChoice: Choice selected: ${nextId}`)
-    const nextDialogue = dialogues.find(d => d.id === nextId); 
-    if (nextDialogue) {
-      setCurrentLineId(nextDialogue.id); 
-      handleNext(); 
-    } else {
-      console.error('Dialogue not found for id:', nextId);
-    }
-  }
+  // const handleSelectChoice = (nextId) => {
+  //   console.log(`/handleSelectChoice: Choice selected: ${nextId}`)
+  //   const nextDialogue = dialogues.find(d => d.id === nextId); 
+  //   if (nextDialogue) {
+  //     setCurrentLineId(nextDialogue.id); 
+  //     handleNext(); 
+  //   } else {
+  //     console.error('Dialogue not found for id:', nextId);
+  //   }
+  // }
   
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
   console.log(currentDialogue, 'Current Dialogue')
 
+  const handleMouseDown = (event) => {
+    event.preventDefault();
+  };
+
 
   return (
-      <div className="cutscene-container" onClick={handleNext} style={{ backgroundImage: "" }}>
+      <div className="cutscene-container" onClick={handleNext} style={{ backgroundImage: "" }} onMouseDown={handleMouseDown}>
 
-        <p>{currentDialogue.text}</p>
+        <LinkEffect />
+
+        {currentDialogue && (
+        <TextAnimation text={currentDialogue.text} speed={60} />
+      )}
           
       </div>
   )
@@ -56,3 +66,4 @@ const Cutscene1_1 = () => {
 
 
 export default Cutscene1_1
+
