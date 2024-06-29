@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './slideshow_default.css';
 import { useNavigate } from 'react-router-dom';
 import ss1AudioController from '../../utils/ss1AudioController';
+import LinkEffect from '../../utils/LinkEffect';
+import { ZIndex } from 'tsparticles-engine';
 
 const Slideshow1 = () => {
     const navigate = useNavigate();
@@ -42,11 +44,16 @@ const Slideshow1 = () => {
     }, [navigate, slideshow1.length]);
 
     return (
+
         <div className='slide-show-div'>
+            <div className='link-effect-background' style={{ zIndex: 0 }}>
+            <LinkEffect />
+             </div>
             <img 
                 className='slide-img-display'
                 src={slideshow1[currentSlide]} 
                 alt={`Slide ${currentSlide}`} 
+                style={{ zIndex: 1, position: 'relative' }}
             />
         </div>
     )

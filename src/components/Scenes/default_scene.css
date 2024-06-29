@@ -16,8 +16,7 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  text-shadow: 2px 2px 4px black; 
-  
+  text-shadow: 2px 2px 4px black;
 }
 
 button {
@@ -124,7 +123,6 @@ p {
   object-fit: contain;
 }
 
-
 .choices {
   display: flex;
   flex-direction: column;
@@ -136,43 +134,24 @@ p {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-.scene2img img{
-  animation: fadeInAnimation ease 8s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
 
+.scene2img img {
+  animation: fadeInAnimation ease 8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    } 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 1200px) {
-  #character-image {
-    width: 30%; 
-    height: 400px;
-    bottom: 120px;
-  }
-
-  #other-character-image {
+  #character-image, .other-character-image {
     width: 30%; 
     height: 400px;
     bottom: 120px;
@@ -194,13 +173,7 @@ p {
 }
 
 @media (max-width: 992px) {
-  #character-image {
-    width: 35%; 
-    height: 350px;
-    bottom: 100px;
-  }
-
-  #other-character-image {
+  #character-image, .other-character-image {
     width: 35%; 
     height: 350px;
     bottom: 100px;
@@ -222,13 +195,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  #character-image {
-    width: 40%; 
-    height: 300px;
-    bottom: 80px;
-  }
-
-  #other-character-image {
+  #character-image, .other-character-image {
     width: 40%; 
     height: 300px;
     bottom: 80px;
@@ -250,13 +217,7 @@ p {
 }
 
 @media (max-width: 576px) {
-  #character-image {
-    width: 45%; 
-    height: 250px;
-    bottom: 60px;
-  }
-
-  #other-character-image {
+  #character-image, .other-character-image {
     width: 45%; 
     height: 250px;
     bottom: 60px;
@@ -268,7 +229,7 @@ p {
   }
 
   .dialogue-box p {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .dialogue-box button {

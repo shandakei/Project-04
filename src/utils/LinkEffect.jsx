@@ -27,7 +27,7 @@ const LinkEffect = () => {
         width: '100%',
         height: '100%',
         backgroundColor: 'none',
-        opacity: '10%',
+        opacity: '25%',
         background: 'none',
       }}
     />

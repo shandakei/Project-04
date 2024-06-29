@@ -23,6 +23,7 @@ export const dialogues = [
     { id: 13, scene: 1, name: 'DT', text: "I should push a little longer..he's waiting for me..", action: 'fadeOut', next: 15 },
     { id: 14, scene: 1, name: 'DT', text: "I have no choice.. wait for me..", action: 'fadeOut', next: 15 },
 
+
     { id: 15, scene: 2, name: 'sound', text: "zzz..", next: 16 },
     { id: 16, scene: 2, name: 'DT', text: "...", next: 17 },
     { id: 17, scene: 2, name: 'sound', text: "zzz..", next: 18 },
@@ -109,7 +110,7 @@ export const dialogues = [
     { id: 70, scene: 3, name: 'DT', text: "*you keep walking*", next: 78 }, 
     { id: 71, scene: 3, name: 'DT', text: "*you sit down on some nearby rubble and take in your surroundings*", next: 72 },
     { id: 72, scene: 3, name: 'DT', text: "Everything seems quiet", next: 73 },
-    { id: 73, scene: 3, name: 'DT', text: "...", next: 76 },
+    { id: 73, scene: 3, name: 'DT', text: ".....", next: 76 },
     { id: 74, scene: 3, name: 'DT', text: "*inside the bag are a few cans of rations, a blanket, a rope and an old solar powered phone*", next: 75 },
     { id: 75, scene: 3, name: 'DT', text: "...thought I had more food left..", next: 76 },
     { id: 76, scene: 3, name: 'DT', text: "I better keep going", next: 78 },
@@ -202,7 +203,7 @@ export const dialogues = [
             { id: 13, scene: 3, name: 'DT', text: "Distract the figure", next: 125 }
         ]
     },
-    { id: 123, scene: 3, name: 'sound', text: "*the girl fails to hear you over the noise of crashing behind her*", next: 126 },
+    { id: 123, scene: 3, name: 'sound', text: "*the girl fails to hear you over the noise of crashing behind her*", next: 125 },
     { id: 124, scene: 3, name: 'DT', text: "*you keep going*", next: 127 },
     { id: 125, scene: 3, name: 'sound', text: "*you pick up a rock mid-run and hurl it at the figure pursuing the girl*", next: 128 },
     { id: 126, scene: 3, name: 'DT', text: "Take this!", next: 127 },
@@ -212,7 +213,7 @@ export const dialogues = [
     { id: 130, scene: 3, name: 'DT', text: "*You catch up to her in a few paces*", next: 131 },
     { id: 131, scene: 3, name: 'DT', text: "RUN!", next: 133 },
 
-    { id: 133, scene: 3, name: 'sound', text: "*You reach out your hand to her, running as hard as you can*", next: 134 },
+    { id: 133, scene: 3, name: 'sound', text: "*You reach out your hand to her*", next: 134 },
     { id: 134, scene: 3, name: 'sound', text: "*You manage to grab her wrist*", next: 135 },
     { id: 135, scene: 3, name: 'hidden', text: "ROOOAAAARRR!!", next: 136 },
     { id: 136, scene: 3, name: 'sound', text: "*the figure swings out at you*", next: 137 },
@@ -262,24 +263,24 @@ export const dialogues = [
     { id: 169, scene: 3, name: 'DT', text: "*You grab the girl and keep running down the street*", next: 223 }, //-> scene 5
 
     // Scene 4 (Continuation of hiding in the building)
-    { id: 171, scene: 4, name: 'sound', text: " *You and Ange rush deeper into the building, looking for a safe spot*", next: 172 },
+    { id: 171, scene: 4, name: 'sound', text: " *You and the girl rush deeper into the building, looking for a safe spot*", next: 172 },
     { id: 172, scene: 4, name: 'Ange', text: "Where are we going!?", next: 173 },
     { id: 173, scene: 4, name: 'DT', text: "Anywhere but here!", next: 174 },
-    { id: 174, scene: 4, name: 'sound', text: "*The building is eerily silent, but you can hear distant sounds of chaos from outside*", next: 175 },
-    { id: 175, scene: 4, name: 'Ange', text: "Do you even know where we're heading?", next: 176 },
-    { id: 176, scene: 4, name: 'DT', text: "We need to find a place to hide, regroup, and think!", next: 177 },
+    { id: 174, scene: 4, name: 'sound', text: "*The building is eerily silent, but you can still hear distant sounds of chaos from outside*", next: 175 },
+    { id: 175, scene: 4, name: 'Ange', text: "Do you even know where we're going?", next: 176 },
+    { id: 176, scene: 4, name: 'DT', text: "We just need to find a place to hide, regroup, and think!", next: 177 },
     { id: 177, scene: 4, name: 'sound', text: "*You spot a partially open door leading to a basement*", next: 178 },
     { 
         id: 178, 
         scene: 4, 
         name: 'DT', 
-        text: "Over there!", 
+        text: "What do you think?", 
         choices: [
             { id: 179, scene: 4, name: 'DT', text: "Enter the basement", next: 180 },  //basement BG
             { id: 181, scene: 4, name: 'DT', text: "Keep looking for another spot", next: 182 }
         ]
     },
-    { id: 180, scene: 4, name: 'sound', text: "*You and Ange scramble into the basement, descending into the darkness below*", next: 183 },
+    { id: 180, scene: 4, name: 'sound', text: "*You and the girl scramble into the basement, descending into the darkness below*", next: 183 },
     { id: 182, scene: 4, name: 'sound', text: "*You decide to keep looking, hoping to find a better hiding spot*", next: 207 },
 
     // Basement path
@@ -290,10 +291,10 @@ export const dialogues = [
     { id: 187, scene: 4, name: 'Ange', text: "What now?", next: 188 },
     { id: 188, scene: 4, name: 'DT', text: "We need to find a way out of the city. Somewhere safe.", next: 189 },
     { id: 189, scene: 4, name: 'Ange', text: "Do you think there is anywhere safe left?", next: 190 },
-    { id: 190, scene: 4, name: 'DT', text: "We have to believe there is.", next: 191 },
+    { id: 190, scene: 4, name: 'DT', text: " I don't know.. but I'm not dying here..", next: 191 },
     { id: 191, scene: 4, name: 'sound', text: "*Your conversation is interrupted by the distant echo of footsteps above*", next: 192 },
     { id: 192, scene: 4, name: 'Ange', text: "Did you hear that?", next: 193 },
-    { id: 193, scene: 4, name: 'DT', text: "Yes, stay close to me.", next: 194 },
+    { id: 193, scene: 4, name: 'DT', text: "Yeah..stay close..", next: 194 },
     { id: 194, scene: 4, name: 'sound', text: "*The sound of footsteps echoes closer*", next: 195 },
     { 
         id: 195, 
@@ -301,7 +302,7 @@ export const dialogues = [
         name: 'DT', 
         text: "We need to move, now!", 
         choices: [
-            { id: 196, scene: 4, name: 'DT', text: "Move towards the sound", next: 197 },
+            { id: 196, scene: 4, name: 'DT', text: "Stay still", next: 197 },
             { id: 198, scene: 4, name: 'DT', text: "Move away from the sound", next: 200 }
         ]
     },
@@ -412,16 +413,16 @@ export const dialogues = [
     { id: 281, scene: 6, name: 'DT', text: " ! ... ... Ange...", next: 282 },
     { id: 282, scene: 6, name: 'Ange', text: " you used to teach us, remember? It wasn't too long ago..or maybe it was..", next: 283 },
     { id: 283, scene: 6, name: 'DT', text: " I remember..you said we?..", next: 284 },
-    { id: 284, scene: 6, name: 'Ange', text: " The others, after classes finished, we all decided to meet each other..we were all together when the end came..", next: 285 },
+    { id: 284, scene: 6, name: 'Ange', text: " The others, after we graduated, we all decided to meet each other..we were all together when the end came... so..", next: 285 },
     { id: 285, scene: 6, name: 'DT', text: "....and you've been here all along..which means, you have somewhere safe we could be staying..", next: 286 },
-    { id: 286, scene: 6, name: 'Ange', text: " I didn't mean to hide it!..I just, Leo said we can't trust anyone so I..", next: 287 },
+    { id: 286, scene: 6, name: 'Ange', text: " I didn't mean to hide it!..I just, Leo said we can't trust anyone.. so.. I..", next: 287 },
     { id: 287, scene: 6, name: 'DT', text: "Forget it, if we don't have to leave the city then we might have a chance.... We have to go.. now", next: 288 },
     { id: 288, scene: 6, name: 'Ange', text: "..right..", next: 289 },
 
-    { id: 289, scene: 6, name: 'sound', text: "*After a long journey, you stand before a door of an apartment on the third floor of a burnt out building*", next: 290 },
-    { id: 290, scene: 6, name: 'sound', text: "*Ange knocks on the door in a specific pattern, and it opens to reveal a group of familiar faces*", next: 291 },
+    { id: 289, scene: 6, name: 'sound', text: "*After a long journey, you reach the third floor of a non-descript building, standing before a door*", next: 290 },
+    { id: 290, scene: 6, name: 'sound', text: "*Ange knocks on the door once..twice.. ..thrice .. and it opens to reveal a group of familiar faces*", next: 291 },
     { id: 291, scene: 6, name: 'Student1', text: "DT! You're alive!", next: 292 }, //new DIVS for other characters
-    { id: 292, scene: 6, name: 'DT', text: "Well obviously but I should be saying the same thing, what are you all doing here? Is everyone okay?", next: 293 },
+    { id: 292, scene: 6, name: 'DT', text: "..Yeah... I'm alive.. but I should be saying the same thing, what are you all doing here? Is everyone okay?", next: 293 },
     { id: 293, scene: 6, name: 'Student2', text: "It's been tough, but we're managing. Come in, we have some supplies.", next: 294 },
     { id: 294, scene: 6, name: 'sound', text: "*You enter the apartment and are greeted by the rest of your former students*", next: 295 },
     { id: 295, scene: 6, name: 'sound', text: "*You spend some time catching up and planning your next move*", next: 296 }, //expand on meeting students
@@ -451,15 +452,20 @@ export const dialogues = [
     { id: 305, scene: 6, name: 'DT', text: "I know. We'll stick together and move quickly.", next: 306 },
     { id: 306, scene: 6, name: 'sound', text: "*With a plan in place, you feel a renewed sense of hope and determination*", next: 307 },
     { id: 307, scene: 6, name: 'DT', text: "We'll get through this. Together.", next: 308 },
-    { id: 308, scene: 6, name: 'sound', text: "*You all settle down for the night, preparing for the challenges ahead*", next: 309 },
+    { id: 308, scene: 6, name: 'sound', text: "*You all settle down for the night, preparing for the challenges ahead*", next: 1_000_000 },
     
+
+    { id: 1_000_000, scene: 'credits', name: 'sound', text: "", next: 1_000_001 },
+    { id: 1_000_001, scene: 'credits', name: 'sound', text: " End of Chapter 1 ", next: 1_000_002 },
+    { id: 1_000_002, scene: 'credits', name: 'sound', text: " End of Chapter 1 ", next: 0 },
+
     
     ///////////////////////////////////////////// END HERE / continue after presentation / nav /credits /////////////////////////////////////////////
 
-    { id: 309, scene: 6, name: 'sound', text: "*The next morning, you wake up early, ready to put your plan into action*", next: 310 },
-    { id: 310, scene: 6, name: 'DT', text: "Let's move out. Stay close and stay alert.", next: 311 },
-    { id: 311, scene: 6, name: 'sound', text: "*You and the students leave the safe house, ready to face whatever comes next*", next: 312 },
-    { id: 312, scene: 6, name: 'sound', text: "*With determination and hope, you step into the unknown, ready to survive and rebuild*", next: 313 }
+    // { id: 309, scene: 6, name: 'sound', text: "*The next morning, you wake up early, ready to put your plan into action*", next: 310 },
+    // { id: 310, scene: 6, name: 'DT', text: "Let's move out. Stay close and stay alert.", next: 311 },
+    // { id: 311, scene: 6, name: 'sound', text: "*You and the students leave the safe house, ready to face whatever comes next*", next: 312 },
+    // { id: 312, scene: 6, name: 'sound', text: "*With determination and hope, you step into the unknown, ready to survive and rebuild*", next: 313 }
 
 
 
@@ -467,14 +473,16 @@ export const dialogues = [
 ];
 
 
+//characters in scene 6
+//finish scene 6 meeting //expand comment
 
+// convert new BG's & move to /media
+//scene transition audio play bugs
+//implement sounds effects
+//finalize css & animations
 
+//review script --!important
+//debug ids after review --!important
 
-//credits page as default end
-//background for sc3 last choices
-//cutscene image for zom2 reveal
-
-//sc4 half the class
-//sc 5 other half of class
-
-//sounds effects
+//xtra
+//BGs showing all characters end of scene 6 choices

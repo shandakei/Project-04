@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import Scene1 from './components/Scenes/scene_1';
 import Scene2 from './components/Scenes/scene_2';
@@ -10,9 +10,10 @@ import Scene3 from './components/Scenes/scene_3';
 import Scene4 from './components/Scenes/scene_4.jsx';
 import Scene5 from './components/Scenes/scene_5.jsx';
 import Scene6 from './components/Scenes/scene_6.jsx';
-// import Credits from './components/Scenes/credits.jsx';
+import Credits from './components/Scenes/credits.jsx';
 
 export default function App() {
+  const navigate = useNavigate();
 
   const [currentScene, setCurrentScene] = useState(() => localStorage.getItem('currentScene') || '/');
   const [choices, setChoices] = useState(() => {
@@ -25,47 +26,29 @@ export default function App() {
     setChoices([]);
     localStorage.removeItem('currentScene');
     localStorage.removeItem('choices');
+    navigate('/');
   };
 
   const handleMouseDown = (event) => {
     event.preventDefault();
   };
 
-
   return (
     <div onMouseDown={handleMouseDown}>
-
       <Routes>
         <Route path="/" element={<Scene1 />} />
         <Route path="/scene2" element={<Scene2 />} />
         <Route path="/cutscene1_1" element={<Cutscene1_1 />} />
         <Route path="/slideshow1" element={<Slideshow1 />} />
         <Route path="/cutscene1_2" element={<Cutscene1_2 />} />
-        <Route path="/scene3" element={<Scene3  />} />
+        <Route path="/scene3" element={<Scene3 />} />
         <Route path="/scene4" element={<Scene4 />} />
         <Route path="/scene5" element={<Scene5 />} />
         <Route path="/scene6" element={<Scene6 />} />
-        {/* <Route path="/credits" element={<Credits  />} /> */}
+        <Route path="/credits" element={<Credits />} />
       </Routes>
 
       <button onClick={clearProgress}>Restart Story</button>
-
     </div>
   );
-
 }
-
-//JF likes green
-
-
-{/* <Route path="/cutscene/:id" element={<Cutscene  />} /> */}
-
-// const cutscene1 = [
-//   '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/1_breakfast.png',
-//   '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/2_leaving.png',
-//   '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/3_boarding.png',
-//   '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/4_plane_window.png',
-//   '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/5_anchor.png',
-//   '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/6_crowd.png',
-//   '/home/shandakei/seb/projects/project-04/interactive-novel/public/media/7_chasing_people.png'
-//   ]

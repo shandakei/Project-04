@@ -30,17 +30,6 @@ const Cutscene1_1 = () => {
     }
 
   }
-
-  // const handleSelectChoice = (nextId) => {
-  //   console.log(`/handleSelectChoice: Choice selected: ${nextId}`)
-  //   const nextDialogue = dialogues.find(d => d.id === nextId); 
-  //   if (nextDialogue) {
-  //     setCurrentLineId(nextDialogue.id); 
-  //     handleNext(); 
-  //   } else {
-  //     console.error('Dialogue not found for id:', nextId);
-  //   }
-  // }
   
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
   console.log(currentDialogue, 'Current Dialogue')

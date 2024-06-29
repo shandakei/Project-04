@@ -33,7 +33,7 @@ const Scene4 = () => {
       console.log(currentDialogue, 'Sc4/handleNext/nextlineId log');
     }
 
-    if (currentDialogue.id === 218) {
+    if (currentDialogue.id >= 217) {
       navigate('/scene6');
     }
   };

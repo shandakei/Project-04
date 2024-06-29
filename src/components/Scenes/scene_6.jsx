@@ -16,13 +16,16 @@ const Scene6 = () => {
   const [audioPlayed, setAudioPlayed] = useState(false);
   const navigate = useNavigate();
 
+  const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
+
   const handleNext = () => {
     if (!audioPlayed) {
       defaultAudioController.play();
       setAudioPlayed(true);
     }
 
-    const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
+    console.log(currentDialogue);
+
     if (currentDialogue && currentDialogue.next) {
       if (!currentDialogue.choices) {
         setCurrentLineId(currentDialogue.next);
@@ -45,12 +48,17 @@ const Scene6 = () => {
     }
   };
 
-  const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
+  useEffect(() => {
+    if (currentDialogue && currentDialogue.id === 308) {
+      navigate('/credits');
+    }
+  }, [currentDialogue, navigate]);
 
   let backgroundImage = "url('/media/default_background_night.png')";
   if (currentDialogue?.id >= 288 && currentDialogue?.id <= 296) {
     backgroundImage = "url('/media/s6bg_1.png')";
   }
+
 
   return (
     <div className="scene-container" onClick={handleNext} style={{ backgroundImage }} >
@@ -58,11 +66,11 @@ const Scene6 = () => {
       <img src="/media/Ange_inactive.png" alt="Character" className="other-character-image" />
 
       {currentDialogue && currentDialogue.name === 'Ange' && (
-        <div className="other-character-div" >
+        <div className="other-character-div">
           <img src="/media/Ange.png" alt="Character" className="other-character-image" />
         </div>
       )}
-      <SnowEffect />
+      {/* <SnowEffect /> */}
       {currentDialogue && (
         <DialogueBox
           dialogue={<TextAnimation text={currentDialogue.text} speed={50} />}
@@ -71,7 +79,7 @@ const Scene6 = () => {
         />
       )}
     </div>
-  )
+  );
 }
 
 export default Scene6;

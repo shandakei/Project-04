@@ -212,3 +212,96 @@ Look at it's eyes...
 Come on! 
 *You grab the girl and keep running down the street*
 
+
+
+{ id: 289, scene: 6, name: 'sound', text: "*After a long journey, you reach the third floor of a non-descript building, standing before a door*", next: 290 },
+    { id: 290, scene: 6, name: 'sound', text: "*Ange knocks on the door once..twice.. ..thrice .. and it opens to reveal a group of familiar faces*", next: 291 },
+    { id: 291, scene: 6, name: 'Student1', text: "DT! You're alive!", next: 292 }, //new DIVS for other characters
+    { id: 292, scene: 6, name: 'DT', text: "..Yeah... I'm alive.. but I should be saying the same thing, what are you all doing here? Is everyone okay?", next: 293 },
+    { id: 293, scene: 6, name: 'Student2', text: "It's been tough, but we're managing. Come in, we have some supplies.", next: 294 },
+    { id: 294, scene: 6, name: 'sound', text: "*You enter the apartment and are greeted by the rest of your former students*", next: 295 },
+    { id: 295, scene: 6, name: 'sound', text: "*You spend some time catching up and planning your next move*", next: 296 }, //expand on meeting students
+
+Students = Ange, Ting, JF, Leo, Eric, Bernie, Georgia, Mark 
+
+291: Eric
+293: Eric
+
+E: guys, look who's here!
+B: Ange! we we're worried about you!
+G: Ange! come here, let me help with that
+L: stop
+B: ?..
+T: ...
+G: what is it now ? She's tired, we can do the report leather
+L: ...
+M: Leo..?
+L: Eric, you just let anyone in now?
+
+*DT moves from behind the doorframe into view*
+
+E: Wha-! Ange! You-!..
+A: It's okay guys! He's D-
+M: you brought some random guy here?? What if he's infected!
+B: *moves closer to Ange protectively*
+G: *reaches into her jacket and readies herself to attack*
+
+L: Enough! 
+
+*everyone freezes*
+
+L: ....
+DT: ....
+L: ....
+L: *turns to Ange*
+L: Isn't this-
+
+Ange: (frustrated) I was just telling you! 
+A: It's DT! He found me last night! .. I wouldn't be here otherwise!
+
+*everyone either looks confused or disbelieving*
+
+T: Bullshit!
+M: DT lives.. lived in Melbourne, there's no way he'd be all the way out here. 
+E: yeah.. it takes a week nowadays just to walk down the street.. nevermind other cities..
+L: *moves to the entrance and stands before DT*
+L: ...
+DT: ...
+
+A: *looks around before losing patience*
+A: *hits DT on the arm*
+A: say something!
+
+DT: ...sorry..
+DT: I was just ..shocked.. to see you all here
+
+L: ...
+B: DT?.. is that really you?
+G: *visibly relaxes her posture*
+G: DT?
+
+*everyone gathers closer*
+
+DT: ....
+DT: it's good to see you all again..
+
+E: Jesus Chri-...
+M: No ways bro..
+T: hah?..
+
+A: *grabs DT by the arm and leads him forward*
+L: *moves into their path*
+A: LE-!..
+L: *looks at Ange then back to DT*
+L: ...
+L: It's good to see you again, DT..
+L: *extends his hand*
+DT: ...
+DT: *grasps Leos' hand and shakes it firmly*
+
+DT: good to see you again..sorry to impose..
+
+Sound: *rushes forward and greets DT. DT seems overwhelmed at first but eventually starts to lower his guard*
+
+
+

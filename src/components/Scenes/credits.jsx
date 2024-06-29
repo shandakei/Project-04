@@ -1,67 +1,56 @@
 import React, { useState, useEffect } from 'react';
-// import './default_scene.css';
-// import DialogueBox from '../DialogueBox/DialogueBox';
+import '/src/components/cutscenes/cutscene_default.css';
 import { dialogues } from '../DialogueBox/dialogue';
 import { getDialoguesForScene } from '../../utils/sortByScene';
 import { useNavigate } from 'react-router-dom';
-// import TextAnimation from '../../utils/TextAnimation';
-// import SnowEffect from '../../utils/SnowEffect';
-import defaultAudioController from '../../utils/defaultAudioController';
-import ss3AudioController from '../../utils/ss3AudioController';
+import TextAnimation from '../../utils/TextAnimation';
+import LinkEffect from '../../utils/LinkEffect';
 
-const Credits = () => {
+const Cutscene1_1 = () => {
 
   const sceneId = 'credits';
-  const sceneDialogues = getDialoguesForScene(sceneId, dialogues);
+  const sceneDialogues = getDialoguesForScene(sceneId, dialogues)
 
-  const [currentLineId, setCurrentLineId] = useState(100_000_000);
-  const [audioPlayed, setAudioPlayed] = useState(false);
+  const [currentLineId, setCurrentLineId] = useState(1_000_001)
   const navigate = useNavigate();
-  
+
   const handleNext = () => {
-    if (!audioPlayed) {
-      defaultAudioController.play();
-      setAudioPlayed(true);
-    }
-    
-    const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
+    const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
     if (currentDialogue && currentDialogue.next) {
       if (!currentDialogue.choices) {
-        setCurrentLineId(currentDialogue.next);
+        setCurrentLineId(currentDialogue.next)
       } else {
-        console.log('Choices available, waiting for user selection');
+        console.log('Choices available, waiting for user selection')
       }
     } else {
-      console.log(currentDialogue, 'Sc3/handleNext/nextlineId log');
+      navigate('/')
     }
+    
 
-    if (currentDialogue.id === 98) {
-      defaultAudioController.fadeOut();
-      ss3AudioController.play();
-    }
+  }
 
-    if (currentDialogue.id === 156 || currentDialogue.id === 169) {
-      ss3AudioController.fadeOut();
-      navigate('/scene3');
-    }
+  const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
+  console.log(currentDialogue, 'Current Dialogue')
+
+  const handleMouseDown = (event) => {
+    event.preventDefault();
   };
 
 
-  
-  const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
-
-  
-  let backgroundImage = "url('/media/default_background_night.png')";
-  if ((currentDialogue?.id >= 150 && currentDialogue?.id <= 156) || 
-     (currentDialogue?.id >= 163 && currentDialogue?.id <= 169)) {
-    backgroundImage = "url('/media/s3bg_1.png')";
-  }
-
   return (
-      <div className="credits-container" onClick={handleNext} style={{ backgroundImage }} >
-      
+      <div className="cutscene-container" onClick={handleNext} style={{ backgroundImage: "" }} onMouseDown={handleMouseDown}>
+
+        <LinkEffect />
+
+        {currentDialogue && (
+        <TextAnimation text={currentDialogue.text} speed={60} />
+      )}
+          
       </div>
   )
 }
 
-export default Scene3;
+
+
+export default Cutscene1_1
+
