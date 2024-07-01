@@ -22,6 +22,10 @@ class Ss3AudioController {
             }
         }, 200);
     }
+
+    setVolume(volume) {
+        this.audio.volume = volume;
+    }
 }
 
 const ss3AudioController = new Ss3AudioController();

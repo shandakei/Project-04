@@ -33,7 +33,13 @@ const Scene5 = () => {
       console.log(currentDialogue, 'Sc5/handleNext/nextlineId log');
     }
 
+    if (currentDialogue.id === 270) {
+      defaultAudioController.fadeOut();
+      navigate('/scene6');
+    }
+
     if (currentDialogue.id === 273) {
+      defaultAudioController.fadeOut();
       navigate('/scene6');
     }
   };
@@ -52,8 +58,10 @@ const Scene5 = () => {
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
 
   let backgroundImage = "url('/media/default_background_night.png')";
-  if (currentDialogue?.id >= 262 && currentDialogue?.id <= 268) {
-    backgroundImage = "url('/media/s5bg_1.png')";
+  if (currentDialogue?.id >= 232 && currentDialogue?.id <= 250) {
+    backgroundImage = "url('/media/sewers_BG.png')";
+  } else if (currentDialogue?.id >= 223 && currentDialogue?.id <= 229 || currentDialogue?.id >= 253 && currentDialogue?.id <= 259) {
+    backgroundImage = "url('/media/empty_street_BG.png')";
   }
 
   return (

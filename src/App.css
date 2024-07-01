@@ -1,0 +1,10 @@
+#restart {
+    position: fixed;
+    top: 10px; 
+    right: 10px; 
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    z-index: 1000; 
+}

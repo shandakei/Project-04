@@ -5,7 +5,7 @@ class DefaultAudioController {
   
     play() {
       this.audio.play();
-    //   this.audio.volume = 1;
+      // this.audio.volume = 1;
     }
   
     pause() {
@@ -22,6 +22,10 @@ class DefaultAudioController {
           clearInterval(fadeAudio);
         }
       }, 200);
+    }
+
+    setVolume(volume) {
+      this.audio.volume = volume;
     }
   }
   

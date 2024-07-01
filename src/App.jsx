@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-
+import './App.css'
 import Scene1 from './components/Scenes/scene_1';
 import Scene2 from './components/Scenes/scene_2';
 import Cutscene1_1 from './components/cutscenes/cutscene1_1.jsx';
@@ -35,6 +35,7 @@ export default function App() {
 
   return (
     <div onMouseDown={handleMouseDown}>
+      <button id='restart' onClick={clearProgress}>Restart Story</button>
       <Routes>
         <Route path="/" element={<Scene1 />} />
         <Route path="/scene2" element={<Scene2 />} />
@@ -48,7 +49,6 @@ export default function App() {
         <Route path="/credits" element={<Credits />} />
       </Routes>
 
-      <button onClick={clearProgress}>Restart Story</button>
     </div>
   );
 }

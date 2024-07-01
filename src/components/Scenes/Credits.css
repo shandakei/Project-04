@@ -1,0 +1,109 @@
+.credits-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('path-to-your-background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+  }
+  
+  .start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .start-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .credits-roll {
+    position: absolute;
+    bottom: -100%; /* Adjusted initial position */
+    width: 100%;
+    height: 300%; /* Increased height to ensure smooth scrolling */
+    animation: roll 330s linear forwards; /* Adjusted duration */
+  }
+  
+  .credits-content {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .credits-content h1, .credits-content h2 {
+    margin: 1rem 0;
+  }
+  
+  .credits-content p {
+    margin: 2rem 0;
+  }
+  
+  .credits-image {
+    margin: 1rem 0;
+  }
+  
+  .credits-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 800px; /* Ensure images don't take up too much space */
+  }
+  
+  @keyframes roll {
+    0% {
+      bottom: -100%; /* Starting from just below the viewable area */
+    }
+    100% {
+      bottom: 1000%; /* Ending at the top of the viewable area */
+    }
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1200px) {
+    .credits-content {
+      font-size: 1.5rem;
+    }
+  
+    .credits-image img {
+      max-height: 600px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .credits-content {
+      font-size: 1.2rem;
+    }
+  
+    .credits-image img {
+      max-height: 500px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .credits-content {
+      font-size: 1rem;
+    }
+  
+    .credits-image img {
+      max-height: 400px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .credits-content {
+      font-size: 0.8rem;
+    }
+  
+    .credits-image img {
+      max-height: 300px;
+    }
+  }
+  

@@ -6,13 +6,13 @@ import { getDialoguesForScene } from '../../utils/sortByScene';
 import { useNavigate } from 'react-router-dom';
 import TextAnimation from '../../utils/TextAnimation';
 import SnowEffect from '../../utils/SnowEffect';
-import defaultAudioController from '../../utils/defaultAudioController';
+import sc6AudioDefault from '../../utils/sc6AudioController';
 
 const Scene6 = () => {
   const sceneId = 6;
   const sceneDialogues = getDialoguesForScene(sceneId, dialogues);
 
-  const [currentLineId, setCurrentLineId] = useState(274);
+  const [currentLineId, setCurrentLineId] = useState(289); 
   const [audioPlayed, setAudioPlayed] = useState(false);
   const navigate = useNavigate();
 
@@ -20,11 +20,10 @@ const Scene6 = () => {
 
   const handleNext = () => {
     if (!audioPlayed) {
-      defaultAudioController.play();
+      sc6AudioDefault.play();
+      sc6AudioDefault.setVolume(0.025); 
       setAudioPlayed(true);
     }
-
-    console.log(currentDialogue);
 
     if (currentDialogue && currentDialogue.next) {
       if (!currentDialogue.choices) {
@@ -34,6 +33,11 @@ const Scene6 = () => {
       }
     } else {
       console.log(currentDialogue, 'Sc6/handleNext/nextlineId log');
+    }
+
+    if (currentDialogue.id === 361) {
+      sc6AudioDefault.fadeOut();
+      navigate('/credits');
     }
   };
 
@@ -49,25 +53,36 @@ const Scene6 = () => {
   };
 
   useEffect(() => {
-    if (currentDialogue && currentDialogue.id === 308) {
+    if (currentDialogue && currentDialogue.id === 1_000_000) {
       navigate('/credits');
     }
   }, [currentDialogue, navigate]);
 
-  let backgroundImage = "url('/media/default_background_night.png')";
-  if (currentDialogue?.id >= 288 && currentDialogue?.id <= 296) {
-    backgroundImage = "url('/media/s6bg_1.png')";
+  let backgroundImage = "/media/apartment_BG.png";
+  if (currentDialogue?.id >= 289 && currentDialogue?.id <= 296) {
+    backgroundImage = "url('/media/apartment_BG.png')";
   }
 
+  const characterImages = {
+    DT: "/media/DT.png",
+    Ange: "/media/Ange.png",
+    Eric: "/media/Eric.png",
+    Bernie: "/media/Bernie.png",
+    Georgia: "/media/Georgia.png",
+    Leo: "/media/Leo.png",
+    Mark: "/media/Mark.png",
+    Ting: "/media/Ting.png",
+    JF: "/media/JF.png",
+  };
+
+  const getCharacterImage = (name) => characterImages[name] || "/media/Ange.png";
 
   return (
-    <div className="scene-container" onClick={handleNext} style={{ backgroundImage }} >
-      <img src="/media/DT.png" alt="Character" id="character-image" />
-      <img src="/media/Ange_inactive.png" alt="Character" className="other-character-image" />
-
-      {currentDialogue && currentDialogue.name === 'Ange' && (
+    <div className="scene-container" onClick={handleNext} style={{ backgroundImage }}>
+      <img src={getCharacterImage('DT')} alt="Character" id="character-image" />
+      {currentDialogue && currentDialogue.name !== 'DT' && (
         <div className="other-character-div">
-          <img src="/media/Ange.png" alt="Character" className="other-character-image" />
+          <img src={getCharacterImage(currentDialogue.name)} alt="Character" className="other-character-image" />
         </div>
       )}
       {/* <SnowEffect /> */}
@@ -80,6 +95,6 @@ const Scene6 = () => {
       )}
     </div>
   );
-}
+};
 
 export default Scene6;

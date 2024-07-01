@@ -52,8 +52,12 @@ const Scene4 = () => {
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
 
   let backgroundImage = "url('/media/default_background_night.png')";
-  if (currentDialogue?.id >= 180 && currentDialogue?.id <= 185) {
-    backgroundImage = "url('/media/s4bg_1.png')";
+  if (currentDialogue?.id >= 180 && currentDialogue?.id <= 194) {
+    backgroundImage = "url('/media/basement_BG.png')";
+  } else if (currentDialogue?.id >= 186 && currentDialogue?.id <= 190) {
+    backgroundImage = "url('/media/storage_room_BG.png')";
+  } else if (currentDialogue?.id >= 200 && currentDialogue?.id <= 205) {
+    backgroundImage = "url('/media/empty_street_BG.png')";
   }
 
   return (

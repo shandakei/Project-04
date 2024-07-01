@@ -4,7 +4,7 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  background: url('public/media/default_background.jpg') no-repeat center center fixed;
+  background: url('/media/default_background.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }
@@ -60,11 +60,19 @@ p {
   opacity: 0.5;
 }
 
-.scene-container {
+/* .scene-container {
   position: relative;
   height: 100vh;
   width: 100vw;
+} */
+.scene-container {
   overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
 }
 
 .dialogue-box {
@@ -77,14 +85,14 @@ p {
   border-top: 2px whitesmoke;
   height: 100px;
   display: flex;
-  align-items: center; 
+  align-items: center;
   cursor: pointer;
 }
 
 .dialogue-box p {
   margin: 0;
   white-space: pre-wrap;
-  flex: 1; 
+  flex: 1;
   font-size: 3rem;
   justify-content: space-around;
 }
@@ -106,20 +114,20 @@ p {
 
 #character-image {
   position: absolute;
-  bottom: 150px; 
-  left: 50px; 
-  width: 25%; 
-  height: 450px; 
+  bottom: 150px;
+  left: 50px;
+  width: 25%;
+  height: 450px;
   object-fit: contain;
   z-index: 0;
 }
 
 .other-character-image {
   position: absolute;
-  bottom: 120px; 
+  bottom: 120px;
   right: 50px;
-  width: 25%; 
-  height: 450px; 
+  width: 25%;
+  height: 450px;
   object-fit: contain;
 }
 
@@ -147,12 +155,18 @@ p {
   }
   100% {
     opacity: 1;
-  } 
+  }
 }
 
 @media (max-width: 1200px) {
-  #character-image, .other-character-image {
-    width: 30%; 
+  #character-image {
+    width: 30%;
+    height: 400px;
+    bottom: 120px;
+  }
+
+  .other-character-image {
+    width: 30%;
     height: 400px;
     bottom: 120px;
   }
@@ -170,11 +184,21 @@ p {
     margin-top: 5px;
     padding: 8px;
   }
+  .background {
+    background-size: cover; /* Ensure the background covers the entire area */
+    background-position: center;
+  }
 }
 
 @media (max-width: 992px) {
-  #character-image, .other-character-image {
-    width: 35%; 
+  #character-image {
+    width: 35%;
+    height: 350px;
+    bottom: 100px;
+  }
+
+  .other-character-image {
+    width: 35%;
     height: 350px;
     bottom: 100px;
   }
@@ -195,8 +219,14 @@ p {
 }
 
 @media (max-width: 768px) {
-  #character-image, .other-character-image {
-    width: 40%; 
+  #character-image {
+    width: 40%;
+    height: 300px;
+    bottom: 80px;
+  }
+
+  .other-character-image {
+    width: 40%;
     height: 300px;
     bottom: 80px;
   }
@@ -217,8 +247,14 @@ p {
 }
 
 @media (max-width: 576px) {
-  #character-image, .other-character-image {
-    width: 45%; 
+  #character-image {
+    width: 45%;
+    height: 250px;
+    bottom: 60px;
+  }
+
+  .other-character-image {
+    width: 45%;
     height: 250px;
     bottom: 60px;
   }
