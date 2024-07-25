@@ -54,7 +54,7 @@ class SoundEffectController {
       },
     };
 
-    // Preload audio files
+    
     Object.values(this.sounds).forEach(category => {
       Object.values(category).forEach(audio => {
         audio.load();
@@ -67,7 +67,7 @@ class SoundEffectController {
   play(category, sound) {
     if (this.sounds[category] && this.sounds[category][sound]) {
       const audio = this.sounds[category][sound];
-      audio.currentTime = 0; // Ensure the sound starts from the beginning
+      audio.currentTime = 0;
       audio.play().catch(error => {
         console.error(`Error playing sound: ${sound} for category: ${category}`, error);
       });
@@ -81,7 +81,7 @@ class SoundEffectController {
     if (this.playingSounds[`${category}-${sound}`]) {
       const audio = this.playingSounds[`${category}-${sound}`];
       audio.pause();
-      audio.currentTime = 0; // Reset to start
+      audio.currentTime = 0; 
       delete this.playingSounds[`${category}-${sound}`];
     } else {
       console.error(`Effect ${sound} for ${category} error`);

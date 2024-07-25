@@ -48,7 +48,7 @@ const Scene2 = () => {
     if (sound) {
       soundEffectController.play(sound.category, sound.sound);
       const audio = soundEffectController.sounds[sound.category][sound.sound];
-      audio.volume = 0.5; 
+      audio.volume = 1; 
       audio.playbackRate = 1;
       console.log(`Playing sound: ${sound.sound}`);
     }
