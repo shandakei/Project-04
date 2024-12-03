@@ -1,6 +1,6 @@
 class CreditsAudioController {
   constructor() {
-    this.audio = new Audio('/public/media/credits_audio.mp3'); // Ensure the path is correct
+    this.audio = new Audio('/media/credits_audio.mp3'); // Ensure the path is correct
   }
 
   play() {
@@ -26,6 +26,11 @@ class CreditsAudioController {
 
   setVolume(volume) {
     this.audio.volume = volume;
+  }
+
+  stop() {
+    this.audio.pause();
+    this.audio.currentTime = 0;
   }
 }
 

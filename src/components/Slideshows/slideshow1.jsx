@@ -3,23 +3,22 @@ import './slideshow_default.css';
 import { useNavigate } from 'react-router-dom';
 import ss1AudioController from '../../utils/ss1AudioController';
 import LinkEffect from '../../utils/LinkEffect';
-import { ZIndex } from 'tsparticles-engine';
 
 const Slideshow1 = () => {
     const navigate = useNavigate();
     const slideshow1 = [
-        '../../../public/media/1_breakfast.png',
-        '../../../public/media/2_leaving_house.png',
-        '../../../public/media/3_boarding.png',
-        '../../../public/media/4_plane_window.png',
-        '../../../public/media/5_anchor.png',
-        '../../../public/media/6_crowd.png',
-        '../../../public/media/7_chasing_people.png',
-        '../../../public/media/8_breaking_news.png',
-        '../../../public/media/9_huddle.png',
-        '../../../public/media/10_missile_trail.png',
-        '../../../public/media/11_nuke_light.png',
-        '../../../public/media/12_mushroom.png',
+        '/media/1_breakfast.png',
+        '/media/2_leaving_house.png',
+        '/media/3_boarding.png',
+        '/media/4_plane_window.png',
+        '/media/5_anchor.png',
+        '/media/6_crowd.png',
+        '/media/7_chasing_people.png',
+        '/media/8_breaking_news.png',
+        '/media/9_huddle.png',
+        '/media/10_missile_trail.png',
+        '/media/11_nuke_light.png',
+        '/media/12_mushroom.png',
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -36,7 +35,7 @@ const Slideshow1 = () => {
                 }
                 return nextSlide;
             });
-        }, 5000); //5000 when finished
+        }, 5000);
 
         return () => {
             clearInterval(interval);
@@ -44,10 +43,9 @@ const Slideshow1 = () => {
     }, [navigate, slideshow1.length]);
 
     return (
-
         <div className='slide-show-div'>
             <div className='link-effect-background' style={{ zIndex: 0 }}>
-            <LinkEffect />
+                <LinkEffect />
              </div>
             <img 
                 className='slide-img-display'
@@ -56,7 +54,7 @@ const Slideshow1 = () => {
                 style={{ zIndex: 1, position: 'relative' }}
             />
         </div>
-    )
-}
+    );
+};
 
 export default Slideshow1;

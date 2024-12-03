@@ -21,8 +21,8 @@ const Scene1 = () => {
   const soundEffectController = new SoundEffectController();
 
   const dialogueSoundMap = {
-    4: { category: 'environment', sound: 'footsteps1' },
-    9: { category: 'environment', sound: 'footsteps1' },
+    4: { category: 'env', sound: 'footsteps1' },
+    9: { category: 'env', sound: 'footsteps1' },
   };
 
   const handleNext = () => {
@@ -47,12 +47,12 @@ const Scene1 = () => {
       soundEffectController.play(sound.category, sound.sound);
   
       const audio = soundEffectController.sounds[sound.category][sound.sound];
-      audio.volume = 1;
+      audio.volume = 0.6;
       audio.playbackRate = 0.8; 
       console.log(`Playing sound: ${sound.sound} with volume: ${audio.volume} and playback rate: ${audio.playbackRate}`);
     }
 
-    if (currentDialogue.id === 14) {
+    if (currentDialogue.id >= 14) {
       navigate('/scene2');
     }
   };
@@ -69,7 +69,7 @@ const Scene1 = () => {
   };
   
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
-  console.log(currentDialogue, 'Current Dialogue');
+  
 
   return (
     <div className="scene-container" onClick={handleNext} style={{ backgroundImage: "url('/media/default_background.jpg')" }}>

@@ -34,21 +34,21 @@ const Scene3 = () => {
     113: { category: 'zombie', sound: 'roar2' },
     114: { category: 'zombie', sound: 'roar1' },
     118: { category: 'zombie', sound: 'roar1' },
-    119: { category: 'girl', sound: 'hurt1' },//---------------------checked
+    119: { category: 'girl', sound: 'hurt1' },
     127: { category: 'zombie', sound: 'roar2' },
-    130: { category: 'env', sound: 'running1' },//-----check/fixed file-p
+    130: { category: 'env', sound: 'running1' },
     134: { category: 'zombie', sound: 'roar1' },
-    136: { category: 'zombie', sound: 'snarl1' },//-------check/fixed
+    136: { category: 'zombie', sound: 'snarl1' },
     137: { category: 'zombie', sound: 'roar2' },
     140: { category: 'env', sound: 'footsteps1' },
     142: { category: 'zombie', sound: 'distantRoar1' },
-    144: { category: 'env', sound: 'breakingGlass2' }, //-----check----------/fixed category
+    144: { category: 'env', sound: 'breakingGlass2' },
     149: { category: 'zombie', sound: 'growl1' },
     149: { category: 'zombie', sound: 'snarl2' },
-    152: { category: 'zombie', sound: 'distantRoar1' },//-----checked
+    152: { category: 'zombie', sound: 'distantRoar1' },
     155: { category: 'zombie', sound: 'distantRoar1' },    
-    156: { category: 'boy', sound: 'grunt' }, //-----checked
-    159: { category: 'env', sound: 'breakingGlass2' },//-----checked
+    156: { category: 'boy', sound: 'grunt' }, 
+    159: { category: 'env', sound: 'breakingGlass2' },
     162: { category: 'zombie', sound: 'distantRoar1' },
     164: { category: 'zombie', sound: 'roar1' },
     167: { category: 'zombie', sound: 'distantRoar1' },
@@ -70,7 +70,7 @@ const Scene3 = () => {
       console.log(currentDialogue, 'Sc3/handleNext/nextlineId log');
     }
 
-    console.log(currentDialogue);
+    
     
     const sound = dialogueSoundMap[currentDialogue.id];
     if (sound) {
@@ -83,7 +83,6 @@ const Scene3 = () => {
     if (currentDialogue.id === 98) {
       defaultAudioController.fadeOut();
       ss3AudioController.play();
-      // ss3AudioController.setVolume(0.3);
     }
 
     if (currentDialogue.id >= 155 && currentDialogue.id <= 156) { 
