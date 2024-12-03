@@ -5,7 +5,7 @@ class DefaultAudioController {
   
     play() {
       this.audio.play();
-      // this.audio.volume = 1;
+      this.audio.volume = 1;
     }
   
     pause() {

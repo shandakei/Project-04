@@ -10,12 +10,10 @@ import defaultAudioController from '../../utils/defaultAudioController';
 import SoundEffectController from '../../utils/soundEffectsController';
 
 const Scene1 = () => {
-
   const sceneId = 1;
   const sceneDialogues = getDialoguesForScene(sceneId, dialogues);
 
-  const [currentLineId, setCurrentLineId] = useState(sceneDialogues[0]?.id);
-  const [audioPlayed, setAudioPlayed] = useState(false);
+  const [currentLineId, setCurrentLineId] = useState(sceneDialogues[0]?.id || null);
   const navigate = useNavigate();
 
   const soundEffectController = new SoundEffectController();
@@ -25,58 +23,62 @@ const Scene1 = () => {
     9: { category: 'env', sound: 'footsteps1' },
   };
 
-  const handleNext = () => {
-    if (!audioPlayed) {
-      defaultAudioController.play()
-      setAudioPlayed(true);
-    }
+  useEffect(() => {
+    console.log('Playing default background audio...');
+    defaultAudioController.setVolume(1); // Ensure full volume
+    defaultAudioController.play();
 
+    return () => {
+      console.log('Pausing default background audio...');
+      defaultAudioController.pause();
+    };
+  }, []);
+
+  const handleNext = async () => {
     const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
-    if (currentDialogue && currentDialogue.next) {
-      if (!currentDialogue.choices) {
-        setCurrentLineId(currentDialogue.next);
-      } else {
-        console.log('Choices available, waiting for user selection');
-      }
-    } else {
-      console.log(currentDialogue, 'Sc1/handleNext/nextlineId log');
-    }
 
-    const sound = dialogueSoundMap[currentDialogue.id];
-    if (sound) {
-      soundEffectController.play(sound.category, sound.sound);
-  
-      const audio = soundEffectController.sounds[sound.category][sound.sound];
-      audio.volume = 0.6;
-      audio.playbackRate = 0.8; 
-      console.log(`Playing sound: ${sound.sound} with volume: ${audio.volume} and playback rate: ${audio.playbackRate}`);
+    if (!currentDialogue) {
+      console.error('No dialogue found for current line ID:', currentLineId);
+      return;
     }
 
     if (currentDialogue.id >= 14) {
-      navigate('/scene2');
+      console.log('Navigating to Scene2...');
+      defaultAudioController.fadeOut(); // Fade out audio
+      setTimeout(() => {
+        navigate('/scene2'); // Navigate after fade-out
+      }, 1000); // Delay matches fade-out duration
+      return;
+    }
+
+    if (currentDialogue.next) {
+      setCurrentLineId(currentDialogue.next);
+    } else {
+      console.error('No next dialogue available and not the last dialogue.');
+    }
+
+    const sound = dialogueSoundMap[currentDialogue?.id];
+    if (sound) {
+      soundEffectController.play(sound.category, sound.sound);
     }
   };
 
   const handleSelectChoice = (nextId) => {
     console.log(`/handleSelectChoice: Choice selected: ${nextId}`);
-    const nextDialogue = dialogues.find(d => d.id === nextId); 
+    const nextDialogue = sceneDialogues.find(d => d.id === nextId);
     if (nextDialogue) {
-      setCurrentLineId(nextDialogue.id); 
-      handleNext(); 
+      setCurrentLineId(nextDialogue.id);
     } else {
-      console.error('err', nextId);
+      console.error('Dialogue not found for id:', nextId);
     }
   };
-  
+
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
-  
 
   return (
     <div className="scene-container" onClick={handleNext} style={{ backgroundImage: "url('/media/default_background.jpg')" }}>
       <img src="/media/DT.png" alt="Character" id="character-image" />
-
       <SnowEffect />
-      
       {currentDialogue && (
         <DialogueBox
           dialogue={<TextAnimation text={currentDialogue.text} speed={50} />}

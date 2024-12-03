@@ -37,7 +37,7 @@ button:hover {
 p {
   font-size: 18px;
   line-height: 1.6;
-  text-shadow: 2px 2px 4px black; /* Add black shadow to paragraphs */
+  text-shadow: 2px 2px 4px black; 
 }
 
 .character-portrait {
@@ -60,11 +60,6 @@ p {
   opacity: 0.5;
 }
 
-/* .scene-container {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-} */
 .scene-container {
   overflow: hidden;
   position: relative;
@@ -72,7 +67,7 @@ p {
   width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: center center; */
+  
 }
 
 .dialogue-box {
@@ -149,6 +144,8 @@ p {
   animation-fill-mode: forwards;
 }
 
+
+
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -185,7 +182,7 @@ p {
     padding: 8px;
   }
   .background {
-    background-size: cover; /* Ensure the background covers the entire area */
+    background-size: cover; 
     background-position: center;
   }
 }
