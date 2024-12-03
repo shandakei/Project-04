@@ -7,8 +7,10 @@ export default defineConfig({
     host: true, 
   },
   build: {
+    outDir: 'dist', 
     rollupOptions: {
       input: '/index.html', 
     },
   },
+  publicDir: 'public', 
 });
