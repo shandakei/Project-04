@@ -42,7 +42,7 @@ const Scene6 = () => {
   };
 
   const handleSelectChoice = (nextId) => {
-    console.log(`/handleSelectChoice: Choice selected: ${nextId}`);
+    
     const nextDialogue = dialogues.find(d => d.id === nextId);
     if (nextDialogue) {
       setCurrentLineId(nextDialogue.id);

@@ -30,7 +30,7 @@ const Cutscene1_1 = () => {
   }
   
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
-  console.log(currentDialogue, 'Current Dialogue')
+  
 
   const handleMouseDown = (event) => {
     event.preventDefault();

@@ -86,7 +86,7 @@ export const dialogues = [
     { id: 58, scene: 'cutscene_1', name: 'Narrator', text: "...", next: 59 },
     { id: 59, scene: 'cutscene_1', name: 'Narrator', text: "And it did..", next: 60 },
 
-    { id: 60, scene: 'cutscene_1_2', name: 'Narrator', text: " We found out that day ", next: 61 },
+    { id: 60, scene: 'cutscene_1_2', name: 'Narrator', text: "We found out that day ", next: 61 },
     { id: 61, scene: 'cutscene_1_2', name: 'Narrator', text: "That we were never meant to touch the realm of God", next: 62 },
     { id: 62, scene: 'cutscene_1_2', name: 'Narrator', text: "Our hands scorched the skies black", next: 63 },
     { id: 63, scene: 'cutscene_1_2', name: 'Narrator', text: "Sacrificing this world to the darkness", next: 64 },

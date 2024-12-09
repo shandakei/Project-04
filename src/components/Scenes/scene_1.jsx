@@ -24,15 +24,24 @@ const Scene1 = () => {
   };
 
   useEffect(() => {
-    console.log('Playing default background audio...');
-    defaultAudioController.setVolume(1); // Ensure full volume
-    defaultAudioController.play();
-
+    const handleAudioPlay = () => {
+      console.log('Playing default background audio...');
+      defaultAudioController.setVolume(1); // Ensure full volume
+      defaultAudioController.play().catch((error) => {
+        console.error('Audio playback failed:', error);
+      });
+    };
+  
+    // Attach listener to start audio on user interaction
+    window.addEventListener('click', handleAudioPlay, { once: true });
+  
     return () => {
       console.log('Pausing default background audio...');
       defaultAudioController.pause();
+      window.removeEventListener('click', handleAudioPlay);
     };
   }, []);
+  
 
   const handleNext = async () => {
     const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
@@ -64,21 +73,20 @@ const Scene1 = () => {
   };
 
   const handleSelectChoice = (nextId) => {
-    console.log(`/handleSelectChoice: Choice selected: ${nextId}`);
+    
   
     const nextDialogue = sceneDialogues.find(d => d.id === nextId);
   
     if (nextDialogue) {
       setCurrentLineId(nextDialogue.id);
   
-      // Fallback: Timed navigation after choice 13
       if (nextId === 13) {
         console.log('Fallback triggered: Navigating to Scene2...');
         setTimeout(() => {
           console.log('Navigating to Scene2 via handleSelectChoice fallback...');
           defaultAudioController.fadeOut();
           navigate('/scene2');
-        }, 1000); // 1-second delay
+        }, 1500); 
       }
     } else {
       console.error('Dialogue not found for id:', nextId);

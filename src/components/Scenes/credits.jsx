@@ -11,7 +11,7 @@ const Credits = () => {
     { type: 'text', content: '__' },
     { type: 'text', content: '___' },
     { type: 'text', content: '____' },
-    { type: 'text', content: ' "My Son, Xiao\'Er" ' },
+    { type: 'text', content: '"My Son, Xiao\'Er"' },
     { type: 'text', content: 'based on true events' },
     { type: 'text', content: 'in another world' },
     { type: 'text', content: '...' },

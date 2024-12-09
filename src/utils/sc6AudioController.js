@@ -1,6 +1,6 @@
 class Sc6AudioDefault {
     constructor() {
-      this.audio = new Audio('public/media/sc6_default_audio.mp3'); // Ensure the path is correct
+      this.audio = new Audio('/media/sc6_default_audio.mp3'); // Ensure the path is correct
     }
   
     play() {

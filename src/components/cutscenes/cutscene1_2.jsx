@@ -33,7 +33,7 @@ const Cutscene1_2 = () => {
 }
 
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId)
-  console.log(currentDialogue, 'Current Dialogue')
+  
 
 
   return (
