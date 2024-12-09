@@ -65,13 +65,26 @@ const Scene1 = () => {
 
   const handleSelectChoice = (nextId) => {
     console.log(`/handleSelectChoice: Choice selected: ${nextId}`);
+  
     const nextDialogue = sceneDialogues.find(d => d.id === nextId);
+  
     if (nextDialogue) {
       setCurrentLineId(nextDialogue.id);
+  
+      // Fallback: Timed navigation after choice 13
+      if (nextId === 13) {
+        console.log('Fallback triggered: Navigating to Scene2...');
+        setTimeout(() => {
+          console.log('Navigating to Scene2 via handleSelectChoice fallback...');
+          defaultAudioController.fadeOut();
+          navigate('/scene2');
+        }, 1000); // 1-second delay
+      }
     } else {
       console.error('Dialogue not found for id:', nextId);
     }
   };
+  
 
   const currentDialogue = sceneDialogues.find(dialogue => dialogue.id === currentLineId);
 

@@ -22,9 +22,7 @@ const Cutscene1_1 = () => {
       } else {
         console.log('Choices available, waiting for user selection')
       }
-    } else {
-      console.log(currentDialogue, 'Sc2/handleNext/nextlineId log')
-    }
+    } 
     if (currentDialogue.id === 59) {
       navigate('/slideshow1')
     }
